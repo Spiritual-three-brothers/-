@@ -11,10 +11,9 @@
     </div>
   <!-- 主页容器 -->
   <div class="main_container">
-    <div class="top_background"></div>
-    <div class='swiper'>
-    <!-- 轮播图 -->
-    <swiper
+    <div class="top_background">
+      <div class="swiper-container">
+        <swiper
       :indicator-dots='true'
       indicator-color='#d8d8d8'
       indicator-active-color = '#ffad36'
@@ -22,21 +21,32 @@
       :interval='3000'
       :duration='1000'
       :circular='true'
+      style="z-index: 100; height:10rem;"
     >
       <a v-for='img in topSwipers' :key="img.id">
         <swiper-item>
-          <img              
+          <div></div>
+          <!-- <img              
             class='slide-image' 
             mode='aspectFit' 
             :src='img.outterImage'
-            />
+            /> -->
         </swiper-item>
       </a>
     </swiper>  
+    </div>
+      </div>
+      
+    <div class='swiper'>
+    <!-- 轮播图 -->
+    
     <!-- 主要店铺及分类 -->
     <div class="items">
         <ul>
-          <li v-for="item in items" :key="item.id"><img :src="item.itemUrl"/><div>{{item.itemName}}</div></li>
+          <li v-for="item in items" :key="item.id">
+            <div class="item" :class="item.color">{{item.shortName}}</div>
+            <div class="label">{{item.itemName}}</div>
+          </li>
         </ul>
     </div>
     <!-- 促销页面 -->
@@ -77,47 +87,50 @@ export default {
 
       items: [{
         id: 1,
-        itemUrl: '../../static/items/i1.png',
+        color: 'green',
+        shortName: '鲜品',
         itemName: '西和鲜品'
       },
       {
         id: 2,
-        itemUrl: '../../static/items/i1.png',
+        color: 'yellow',
+        shortName: '百货',
         itemName: '百货便利'
       },
       {
         id: 3,
-        itemUrl: '../../static/items/i1.png',
+        color: 'blue',
+        shortName: '电器',
         itemName: '家用电器'
       },
       {
         id: 4,
-        itemUrl: '../../static/items/i1.png',
+        color: 'orange',
+        shortName: '其它',
         itemName: '其他分类'
       },
       {
         id: 4,
-        itemUrl: '../../static/items/i1.png',
+        color: 'orange',
+        shortName: '其它',
         itemName: '其他分类'
       },
       {
         id: 4,
-        itemUrl: '../../static/items/i1.png',
+        color: 'orange',
+        shortName: '其它',
         itemName: '其他分类'
       },
       {
         id: 4,
-        itemUrl: '../../static/items/i1.png',
+        color: 'orange',
+        shortName: '其它',
         itemName: '其他分类'
       },
       {
         id: 4,
-        itemUrl: '../../static/items/i1.png',
-        itemName: '其他分类'
-      },
-      {
-        id: 4,
-        itemUrl: '../../static/items/i1.png',
+        color: 'orange',
+        shortName: '其它',
         itemName: '其他分类'
       }],
 
@@ -174,13 +187,21 @@ export default {
   font-size:30rpx;
   margin-left: 68%;
 }
-.swiper{
-  width: 90%;
-  height: 271rpx;
-  margin-top:-257rpx;
-  margin-left: 5%;
+.swiper-container {
   border-radius: 10px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);  
+  box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.18);
+  padding: 0 20px;
+  background-color: white;
+  position:absolute;
+  left:9px;
+  right:9px;
+  top:160rpx;
+  /* height:365rpx; */
+}
+.swiper{
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 1.5rem;
 }
 .saling{
   margin-top: 0.5rem;
@@ -201,18 +222,18 @@ export default {
   z-index: 3;
   /* margin-top: 50rpx; */
   width: 750rpx;  
-  height: 150rpx;  
+  height: 152rpx;  
   color: #fff;  
   display: flex;  
   flex-direction: column;  
-  background-color:#db3524;
+  background-color: #E23725;
   /* border-radius:  0 0 20% 20%; */
   /* align-items: center;  */
 }
 .top_background{
-  background-color:#db3524;
+  background-color:#E23725;
   width: 100%;
-  height: 400rpx;
+  height: 420rpx;
   border-radius:  0 0 20% 20%;
 }
 .userinfo-avatar {
@@ -227,20 +248,56 @@ export default {
   float: left;
 }
 .items {
-  width:100%;
-  height:80px;
+  height:190px;
   white-space: normal;
-  overflow-x: auto;
+  padding: 0 10px;
 }
 
+.items .item {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  text-align: center;
+  box-shadow: 0px 2px 6px 0px rgba(162, 154, 154, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  font-size: .8em;
+  color: white;
+}
+.items .item.green{
+  background-color: rgba(146, 208, 76, 1);
+}
+
+.items .item.yellow{
+  background-color: rgba(255, 186, 0, 1);
+}
+
+.items .item.blue{
+  background-color: rgba(0, 201, 255, 1);
+}
+
+.items .item.orange{
+  background-color: rgba(255, 122, 64, 1);
+}
+
+.items .label {
+  width: 56px;
+  color: rgba(98, 97, 97, 1);
+  font-size: 14px;
+  text-align: center;
+  line-height: 10px;
+  font-family: SourceHanSansSC-regular;
+  padding: 5px 0;
+}
+.items ul {
+  display: flex;
+  flex: 0 0 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .items ul li{
-  widows: 100rpx;
-  height: 150rpx;
-  float: left;
-  padding: 0.2rem;
-  overflow: hidden;
-  display: inline-block;
-  width: 19%;
+  padding: 0.2rem 0.3rem 0.2rem 0.3rem;
 }
 .items ul li img{
   width: 100rpx;

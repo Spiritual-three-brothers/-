@@ -1,7 +1,6 @@
 # xiheo2o
 
 > A Mpvue project
-> 那真滴牛啤
 
 ## Build Setup
 

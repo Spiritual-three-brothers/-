@@ -49,7 +49,6 @@
       <div class="topic">招商展位</div>
       <div class="more">■ 查看更多</div>
     </div>
-
     </div> 
           <button class="get_usrinfo" open-type="getUserInfo" @getuserinfo="bindGetUserInfo">获取用户信息</button>
   </div>
@@ -175,17 +174,20 @@ export default {
   margin-left: 68%;
 }
 .swiper{
-  width: 90%;
-  height: 271rpx;
-  margin-top:-257rpx;
-  margin-left: 5%;
+  width: 95%;
+  height: 188px;
+  margin-top:-288rpx;
+  margin-left: 2.5%;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);  
+}
+swiper{
+  height: 188px;
 }
 .saling{
   margin-top: 0.5rem;
   width: 100%;
-  height: 300rpx;
+  height: 100%;
   border-radius: 10rpx;
   box-shadow: 0rpx 10rpx 50rpx rgba(0, 0, 0, 0.3);
 }
@@ -193,15 +195,15 @@ export default {
     width:100%;
     height: 100%;
     border-radius: 10%;
-    height:300rpx;
-    margin-top: -15rpx;
+    /* height:300rpx; */
+    /* margin-top: -15rpx; */
 }
 .userinfo {
   position: fixed;  
   z-index: 3;
   /* margin-top: 50rpx; */
   width: 750rpx;  
-  height: 150rpx;  
+  height: 51px;  
   color: #fff;  
   display: flex;  
   flex-direction: column;  
@@ -212,15 +214,16 @@ export default {
 .top_background{
   background-color:#db3524;
   width: 100%;
-  height: 400rpx;
-  border-radius:  0 0 20% 20%;
+  height: 203px;
+  border-radius:  0 0 20px 20px;
 }
 .userinfo-avatar {
   overflow:hidden;  
   display: block;  
-  width: 70rpx;  
-  height: 70rpx;  
-  margin: 30rpx;  
+  width: 31px;  
+  height: 31px;  
+  margin-left: 15px;
+  margin-top: 7px;  
   border-radius: 50%;  
   border: 2px solid #fff;  
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
@@ -229,6 +232,7 @@ export default {
 .items {
   width:100%;
   height:80px;
+  margin-top: 0.2rem;
   white-space: normal;
   overflow-x: auto;
 }
@@ -261,10 +265,10 @@ export default {
 .search{
   background-color: rgb(238, 238, 238);
   border-radius: 40rpx;
-  height: 75rpx;
-  width:570rpx;
-  margin-left: 140rpx;
-  margin-top: -105rpx;
+  height: 31px;
+  width: 257px;
+  margin-left: 128rpx;
+  margin-top: -66rpx;
   font-size: 30rpx;
   text-align: center;
   color: dimgray
@@ -300,5 +304,10 @@ export default {
 }
 .user_icon{
   border-radius: 50%;
+}
+::-webkit-scrollbar-thumb
+{
+border-radius: 10px;
+background-color: yellow;
 }
 </style>

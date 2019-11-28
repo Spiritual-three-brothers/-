@@ -3,80 +3,107 @@
     <swiper
       :indicator-dots='true'
       indicator-color='#d8d8d8'
-      indicator-active-color = '#ffad36'
+      indicator-active-color='#ffad36'
       :autoplay='true'
       :interval='3000'
       :duration='1000'
       :circular='true'
     >
-      <a v-for='img in topSwipers' :key="img.id">
-        <swiper-item>
-          <img              
-            class='slide-image' 
-            mode='aspectFit' 
-            :src='img.outterImage'
-            />
-        </swiper-item>
-      </a>
+
+      <swiper-item v-for='img in topSwipers' :key="img.id" class="swiper-item">
+        <img
+          class='slide-image'
+          :src='img.outterImage'
+        />
+      </swiper-item>
+
     </swiper>
-    <div class="weight">
-        {{curritem.weight}}
-    </div>
     <div class="price">
-        ￥{{curritem.price}}
+      ￥{{curritem.price}}
     </div>
     <div class="full_title">
-        {{curritem.full_title}}
-    </div> 
-  </div>  
+      {{curritem.full_title}}
+    </div>
+    <div class="bottom-bar">
+      <div class="bottom-button">立即购买</div>
+      <div class="bottom-button">加入购物车</div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      topSwipers: [{
-        id: 1,
-        outterImage: '../../static/swiper/a1.jpg'
-      },
-      {
-        id: 2,
-        outterImage: '../../static/swiper/a2.png'
-      },
-      {
-        id: 3,
-        outterImage: '../../static/swiper/a3.png'
-      }],
-      curritem: {
-        item_id: '3122313',
-        price: '12.3',
-        full_title: '天水红富士霜打极品 果农自摘不外售 十一月西北专属 纯绿色水果',
-        weight: '500g'
+  export default {
+    data () {
+      return {
+        topSwipers: [
+          {
+            id: 1,
+            outterImage: '../../static/swiper/a1.jpg'
+          },
+          {
+            id: 2,
+            outterImage: '../../static/swiper/a2.png'
+          },
+          {
+            id: 3,
+            outterImage: '../../static/swiper/a3.png'
+          }],
+        curritem: {
+          item_id: '3122313',
+          price: '12.3',
+          full_title: '天水红富士霜打极品果农自摘不外售十一月西北专属纯绿色水果',
+          weight: '500g'
+        }
       }
     }
   }
-}
 </script>
 <style scoped>
-swiper{
+  swiper {
     width: 100%;
     height: 335px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);  
-}
-.price{
+  }
+
+  .swiper-item {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-item image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .price {
     margin-left: 11px;
-    font-size: 18px;
-    margin-top: 47px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 5px;
     color: #FB4D53;
-    font-family: SourceHanSansSC-bold;
-}
-.weight{
-    border-radius: 20%;
-    background: gainsboro;
+  }
+  .full_title {
+    font-size: 18px;
+    padding: 5px;
+  }
+  .bottom-bar {
+    height: 60px;
+    line-height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .bottom-bar .bottom-button {
     float: right;
-    margin-right: 11px;
-    margin-top: 47px;
-    color: rgb(43, 23, 24);
-    font-family: SourceHanSansSC-bold;
-}
+    width: 120px;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+  }
+  .bottom-bar .bottom-button:first-child {
+    background-color: rgb(244, 170, 62);
+  }
+  .bottom-bar .bottom-button:last-child {
+    background-color: rgb(244, 50, 56);
+  }
 </style>

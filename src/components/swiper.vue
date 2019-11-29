@@ -5,7 +5,7 @@
                 <image :src="item.url" class="slide-image" mode="aspectFill"/>
             </swiper-item>
         </block>
-    </swiper> 
+    </swiper>
 </template>
 
 <script>
@@ -27,9 +27,7 @@ export default {
 </script>
 
 <style scoped>
-.swiper {
-  height: 376rpx !important;
-}
+
 image {
   height: 100%;
   width: 100%;

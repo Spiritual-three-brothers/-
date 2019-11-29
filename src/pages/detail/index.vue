@@ -34,7 +34,7 @@
           </div>
           <div style="flex: 1;text-align: center">
             <div class="icon iconfont" style="height: 20px">&#xe604;</div>
-            <div class="name" style="font-size: 10px;">商城</div>
+            <div style="font-size: 10px;">商城</div>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
     width: 100%;
   }
   .bottom-bar .left-block {
-    flex: 0 0 100px;
+    flex: 0 0 150px;
   }
   .bottom-bar .bottom-button {
     flex:1;

@@ -25,6 +25,19 @@
       {{curritem.full_title}}
     </div>
     <div class="bottom-bar">
+
+      <div class="left-block">
+        <div style="display: flex">
+          <div style="flex: 1;text-align: center">
+            <div class="icon iconfont">&#xe603;</div>
+            <div style="font-size: 10px;">购物车</div>
+          </div>
+          <div style="flex: 1;text-align: center">
+            <span class="icon iconfont">&#xe604;</span>
+            <div class="name" style="font-size: 10px;">商城</div>
+          </div>
+        </div>
+      </div>
       <div class="bottom-button">立即购买</div>
       <div class="bottom-button">加入购物车</div>
     </div>
@@ -86,13 +99,18 @@
     padding: 5px;
   }
   .bottom-bar {
+    display: flex;
     height: 60px;
     line-height: 60px;
     position: fixed;
     bottom: 0;
     width: 100%;
   }
+  .bottom-bar .left-block {
+    flex: 0 0 100px;
+  }
   .bottom-bar .bottom-button {
+    flex:1;
     float: right;
     width: 120px;
     height: 100%;
@@ -100,7 +118,7 @@
     text-align: center;
     color: white;
   }
-  .bottom-bar .bottom-button:first-child {
+  .bottom-bar .bottom-button:nth-child(2) {
     background-color: rgb(244, 170, 62);
   }
   .bottom-bar .bottom-button:last-child {

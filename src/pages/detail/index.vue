@@ -29,11 +29,11 @@
       <div class="left-block">
         <div style="display: flex">
           <div style="flex: 1;text-align: center">
-            <div class="icon iconfont">&#xe603;</div>
+            <div class="icon iconfont" style="height: 20px">&#xe603;</div>
             <div style="font-size: 10px;">购物车</div>
           </div>
           <div style="flex: 1;text-align: center">
-            <span class="icon iconfont">&#xe604;</span>
+            <div class="icon iconfont" style="height: 20px">&#xe604;</div>
             <div class="name" style="font-size: 10px;">商城</div>
           </div>
         </div>

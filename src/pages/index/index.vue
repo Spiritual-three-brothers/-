@@ -78,11 +78,11 @@
           },
           {
             id: 2,
-            outterImage: '../../static/swiper/a2.png'
+            outterImage: '../../static/swiper/a1.jpg'
           },
           {
             id: 3,
-            outterImage: '../../static/swiper/a3.png'
+            outterImage: '../../static/swiper/a1.jpg'
           }],
 
         items: [

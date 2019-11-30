@@ -5,25 +5,70 @@
               <div class="tabbar" :class="{'tabbar-bottom':currentTab===index}" v-for="(item,index) in tabBar" :key="index" @click="clickTab(index)">
                   {{item.title}}
               </div>
-          </scroll-view>
-          <!-- 横向bar的内容 -->
-          <swiper :current="currentTab" @change="changeTab">
-              <swiper-item v-for="item in tabBar" :key="item.id">
+              <div class="swiper-container">
                 <div class="sub-category">
-                  <span @click="clickSub(_index)" :class="{'selected': selectedSub === _index}" class="sub-category-item" v-for="(sub,_index) in item.subcategory" :key="sub.id">{{sub.title}}</span>
+                  <span @click="clickSub(_index)" :class="{'selected': selectedSub === _index}" class="sub-category-item" v-for="(sub,_index) in tabBar[currentTab].subcategory" :key="sub.id">{{sub.title}}</span>
                 </div>
-                <div class="item-content">
-                   <div class="item-container"></div>
-                   <div class="item-container"></div>
-                   <div class="item-container"></div>
-                   <div class="item-container"></div>
-                   <div class="item-container"></div>
-                   <div class="item-container"></div>
-                   <div class="item-container"></div>
-                   <div class="item-container"></div>
-               </div>
-             </swiper-item>
-         </swiper>
+                <div class="item-list">
+
+                  <div class="item-content">
+                    <div class="item-container">
+                      <div class="image-container">
+                        <img src="../../../static/item/osm.jpg">
+                      </div>
+                      <div class="item-title">
+                        欧诗漫OSM美白化妆品套装 营养美肤晶彩无暇补水保湿护肤品
+                      </div>
+                      <div class="item-price">
+                        <span style="font-size: 12px">￥</span>25.53
+                      </div>
+
+                      <div class="item-tag">
+                        <span>自营</span>
+                        <span>放心购</span>
+                      </div>
+                      <div class="item-comment">
+                        13万条评价
+                      </div>
+                      <div class="item-shop">
+                      <span class="shop-name"> 欧诗漫自营官方旗舰店</span>
+                      <span class="enter-shop">
+                        >进店
+                      </span>
+                      </div>
+                    </div>
+
+                    <div class="item-container">
+                      <div class="image-container">
+                        <img src="../../../static/item/osm.jpg">
+                      </div>
+                      <div class="item-title">
+                        欧诗漫OSM美白化妆品套装 营养美肤晶彩无暇补水保湿护肤品
+                      </div>
+                      <div class="item-price">
+                        <span style="font-size: 12px">￥</span>25.53
+                      </div>
+
+                      <div class="item-tag">
+                        <span>自营</span>
+                        <span>放心购</span>
+                      </div>
+                      <div class="item-comment">
+                        13万条评价
+                      </div>
+                      <div class="item-shop">
+                        <span class="shop-name"> 欧诗漫自营官方旗舰店</span>
+                        <span class="enter-shop">
+                        >进店
+                      </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </scroll-view>
+
+
      </div>
 </template>
 
@@ -112,8 +157,8 @@ export default {
 </script>
 
 <style>
-  swiper {
-    height: 100%;
+  .item-list {
+    background-color: rgb(247, 247, 247);
   }
   .top {
      width: 100%;
@@ -134,6 +179,7 @@ export default {
    .tabbar-bottom {
      color: #FB4D53;
      border-bottom: 2px solid #FB4D53;
+     font-weight: bold;
    }
   .sub-category {
     display: flex;
@@ -147,6 +193,8 @@ export default {
     border-radius: 15px;
     margin:0 8px;
     color: rgb(98,98,97);
+    height: 20px;
+    line-height: 20px;
   }
   .sub-category-item.selected {
     color :#FB4D53;
@@ -157,19 +205,132 @@ export default {
     flex-wrap: wrap;
   }
   .item-content .item-container {
-    height: 274px;
-    line-height: 20px;
+    height: 300px;
     border-radius: 0;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: white;
     color: rgba(16, 16, 16, 1);
     font-size: 14px;
     text-align: center;
-    border: 0.5px solid rgb(242, 242, 241);
-    flex: 0 0 50%;
+    flex: 0 0 48.5%;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
+    margin: 1%;
   }
-  .main_container {
+  .item-content .item-container:nth-child(0) {
+    margin-top: 1%;
+  }
+  .item-content .item-container:nth-child(1) {
+    margin-top: 1%;
+  }
+  .item-content .item-container:nth-of-type(even) {
+    margin-left: 0.5%;
+  }
+  .item-content .item-container:nth-of-type(odd) {
+    margin-right: 0.5%;
+  }
+  .item-content .item-container .image-container {
+    flex: 1;
+  }
+  .item-content .item-container .item-title {
+    flex: 0 0 40px;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    color: rgba(16, 16, 16, 1);
+    font-size: 13px;
+    text-align: left;
+    font-family: SourceHanSansSC-regular;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    overflow: hidden;
+    padding: 0 5px;
+
+  }
+  .item-content .item-container .item-price {
+    padding-left: 5px;
+    padding-top: 5px;
+    flex: 0 0 20px;
+    line-height: 20px;
+    color: rgba(251, 77, 83, 1);
+    font-size: 15px;
+    text-align: left;
+    font-family: SourceHanSansSC-bold;
+    font-weight: bold;
+  }
+
+  .item-content .item-container .item-tag {
+    flex: 0 0 14px;
+    padding-left: 5px;
+  }
+
+  .item-content .item-container .item-comment {
+    flex: 0 0 18px;
+    padding-left: 5px;
+
+    height: 18px;
+    line-height: 18px;
+    color: rgb(168, 162, 162);
+    font-size: 10px;
+    text-align: left;
+    font-family: SourceHanSansSC-regular;
+  }
+
+  .item-content .item-container .item-shop {
+    flex: 0 0 18px;
+    padding-left: 5px;
+    line-height: 9px;
+    text-align: left;
+  }
+
+  .item-shop .shop-name {
+    height: 18px;
+    color: rgb(168, 162, 162);
+    font-size: 10px;
+    text-align: left;
+    font-family: SourceHanSansSC-regular;
+    white-space: nowrap;
+    width: 125px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .item-shop .enter-shop {
+    font-size: 10px;
+    text-align: left;
+    font-family: SourceHanSansSC-regular;
+    float: right;
+    padding:5px;
+    line-height: 2px;
+  }
+
+  .item-tag span:first-child {
+    float: left;
+    background-color: rgba(251, 77, 83, 1);;
+    color: white;
+    border-radius: 3px;
+    font-size: 8px;
+    width: 22px;
+    height: 14px;
+    line-height: 14px;
+  }
+
+  .item-tag span:last-child {
+    float: left;
+    background-color: rgba(247, 0, 17, 0.13);
+    color: rgba(251, 77, 83, 1);
+    border-radius: 3px;
+    font-size: 8px;
+    width: 30px;
+    height: 14px;
+    line-height: 14px;
+    margin-left:5px;
+  }
+  .item-content .item-container .image-container image {
+    width: 100%;
     height: 100%;
   }
+
 
    </style>

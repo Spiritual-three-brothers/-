@@ -51,15 +51,15 @@
         topSwipers: [
           {
             id: 1,
-            outterImage: '../../static/swiper/a1.jpg'
+            outterImage: '../../static/item/d2.jpeg'
           },
           {
             id: 2,
-            outterImage: '../../static/swiper/a2.png'
+            outterImage: '../../static/item/d2.jpeg'
           },
           {
             id: 3,
-            outterImage: '../../static/swiper/a3.png'
+            outterImage: '../../static/item/d2.jpeg'
           }],
         curritem: {
           item_id: '3122313',

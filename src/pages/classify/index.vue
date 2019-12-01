@@ -37,7 +37,6 @@
                       </span>
                       </div>
                     </div>
-
                     <div class="item-container">
                       <div class="image-container">
                         <img src="../../../static/item/osm.jpg">

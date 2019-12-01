@@ -9,7 +9,7 @@
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
+  font-size: 53rpx;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,4 +38,9 @@
 .icon-daipingjia:before {
   content: "\e630";
 }
+
+.icon-daifukuan:before {
+  content: "\e606";
+}
+
 

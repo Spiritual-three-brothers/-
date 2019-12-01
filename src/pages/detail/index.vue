@@ -176,9 +176,6 @@ export default {
     margin: -60px 10px 0 0;
     color: dimgray;
   }
-  .haveChosen{
-
-  }
   .displayImg{
     width: 161rpx;
     height: 161rpx;

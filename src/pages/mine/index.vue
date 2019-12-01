@@ -14,11 +14,11 @@
         <!-- 账单相关div -->
         <div class='order' >
           <ul class="icon">
-            <li><i class="fa fa-credit-card fa-2x"></i></li>
-            <li><i class="fa fa-archive fa-2x"></i></li>
-            <li><i class="fa fa-truck fa-2x"></i></li>
-            <li><i class="fa fa-undo fa-2x"></i></li>
-            <li><i class="fa fa-tasks fa-2x" style="color:#d94b44"></i></li>
+            <li><div class="icon iconfont" >&#58891;</div></li>
+            <li><div class="icon iconfont" >&#58891;</div></li>
+            <li><div class="icon iconfont" >&#58909;</div></li>
+            <li><div class="icon iconfont" >&#59147;</div></li>
+            <li><div class="icon iconfont" >&#58928;</div></li>
           </ul>
           <div class="gen-table">
          <div class="gen-tr">
@@ -127,6 +127,9 @@ export default {
 }
 </script>
 <style scoped>
+icon_font{
+  font-size: 53rpx;
+}
 .main_container{
   width: 100%;
   height: 642px;
@@ -145,9 +148,10 @@ export default {
 }
 .order .icon li{
   float: left;
-  padding-left: 43rpx;
-  padding-right: 43rpx;
+  padding-left: 48rpx;
+  padding-right: 48rpx;
   padding-top: 24rpx;
+  color: #FB4D53;
 }
 .order .detail li{
   font-size: 12px;

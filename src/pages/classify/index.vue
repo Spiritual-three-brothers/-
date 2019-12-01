@@ -82,19 +82,16 @@ export default {
           title: '生鲜果蔬',
           subcategory: [
             {id: 1, title: '水果'},
-            {id: 2, title: '蔬菜'},
-            {id: 3, title: '生鲜'},
-            {id: 4, title: '乳制品'},
-            {id: 5, title: '生活用品'}
+            {id: 2, title: '生鲜'}
           ]
         },
         {
           id: 2,
           title: '百货便利',
           subcategory: [
-            {id: 1, title: '水果'},
-            {id: 2, title: '蔬菜'},
-            {id: 3, title: '生鲜'},
+            {id: 1, title: '饮料'},
+            {id: 2, title: '零食'},
+            {id: 3, title: '日用品'},
             {id: 4, title: '乳制品'},
             {id: 5, title: '生活用品'}
           ]

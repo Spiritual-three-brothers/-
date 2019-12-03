@@ -1,6 +1,6 @@
 <template>
   <div class="main_container">
-    <div class="mask" v-show="isShow"></div>
+    <div class="mask" v-show="isShowMask"></div>
     <swiper
       :indicator-dots='true'
       indicator-color='#d8d8d8'
@@ -10,7 +10,6 @@
       :duration='1000'
       :circular='true'
     >
-
       <swiper-item v-for='img in topSwipers' :key="img.id" class="swiper-item">
         <img
           class='slide-image'
@@ -25,15 +24,42 @@
     <div class="full_title">
       {{curritem.full_title}}
     </div>
-    <div class="bottom-bar">
+    
+    <div class='sale' style="display:flex;padding-top:6px" v-if="curritem.sale">
+     <div style="width:23%;padding:3px;color:dimgray" >优惠</div>
+     <div @click="clickSale">
+      <div v-for='item in curritem.sale' class="saleTitle" :key="item.id">
+        {{item.title}}
+      </div>
+      </div>
+      <div @click="clickSale" class="more">...</div>
+    </div>
 
+    <div class="choosen">
+      <div style="color:dimgray">已选</div>
+      <div style="flex:6" @click="click">{{curritem.weight}} {{setTitle}} {{count}}个</div>
+      <div style="font-size:41px;line-height:27px;color:dimgray" @click="click">...</div>
+    </div>
+    <div style="background: rgb(238, 238, 238);width: 100%;height: 1rpx;"></div>
+    <div class="choosen">
+      <div style="color:dimgray">送至</div>
+      <div style="flex:6"></div>
+      <div style="font-size:41px;line-height:27px;color:dimgray" @click="click">...</div>
+    </div>
+
+    <div style="background: rgb(238, 238, 238);width: 100%;height: 15px;"></div>
+    <div v-for="img in topSwipers" :key="img.id">
+      <img style='width:100%' :src="img.outterImage">
+    </div>
+    <div style="height:200px"></div>
+    <div class="bottom-bar">
       <div class="left-block">
         <div style="display: flex">
-          <div style="flex: 1;text-align: center">
+          <div style="flex: 1;text-align: center;background:white">
             <div class="icon iconfont" style="height: 20px">&#xe603;</div>
             <div style="font-size: 10px;">购物车</div>
           </div>
-          <div style="flex: 1;text-align: center">
+          <div style="flex: 1;text-align: center;background:white">
             <div class="icon iconfont" style="height: 20px">&#xe604;</div>
             <div style="font-size: 10px;">商城</div>
           </div>
@@ -42,11 +68,12 @@
       <div class="bottom-button" @click="click">立即购买</div>
       <div class="bottom-button" @click="click">加入购物车</div>
     </div>
-    <div class="shoppingBar" v-show="isShow">
+    <!-- 弹出式购买选项及数目菜单 -->
+    <div class="shoppingBar" v-show="isShowType">
       <div class="onBarTop">
         <img class="displayImg" :src='curritem.item_display_images' />
         <div class="price">￥{{curritem.price}}</div>
-        <div class="haveChosen">已选 {{curritem.weight}} {{count}}份</div>
+        <div class="haveChosen">已选 {{curritem.weight}} {{setTitle}} {{count}}份</div>
         <div class="closeBar" @click="click">×</div>
       </div>
       <div class="onBarMid">
@@ -66,6 +93,17 @@
           <div class="bottom-button">加入购物车</div>
         </div>  
       </div>
+      </div>
+    </div>
+    <!-- 弹出式优惠选项菜单 -->
+    <div class="shoppingBar" style="height:418rpx;" v-show="isShowSale">
+      <div style="display:flex">
+        <div style="flex:8">
+        <div v-for='item in curritem.sale' class="saleTitle"  :key="item.id">
+          {{item.title}}
+        </div>
+        </div>
+        <div @click="clickSale" class="closeBar" style="flex:1;margin:0">×</div>
       </div>
     </div>
   </div>
@@ -95,21 +133,36 @@ export default {
         full_title: '欧诗漫OSM美白化妆品套装 营养美肤晶彩无暇补水保湿护肤品礼盒套装女',
         weight: '250ml',
         types: [
-          {id: 1, title: '欧诗漫瓶装'},
-          {id: 2, title: '欧诗漫罐装'}
+          {id: 0, title: '欧诗漫瓶装'},
+          {id: 1, title: '欧诗漫简装'}
+        ],
+        sale: [{id: 10201, title: '购买任意超100元产品,所有商品折扣8%', sale: '8%'},
+          {id: 10201, title: '购买超1000元的商品,总价格折扣50元', sale: '-20'}
         ],
         item_display_images: '../../static/item/osm.jpg'
       },
-      isShow: false,
-      setBGC: 0
+      isShowType: false,
+      isShowMask: false,
+      isShowSale: false,
+      setBGC: 0,
+      setType: 0,
+      setTitle: ''
     }
   },
   methods: {
     click () {
-      this.isShow = !this.isShow
+      this.isShowType = !this.isShowType
+      this.isShowMask = !this.isShowMask
+    },
+    clickSale () {
+      this.isShowSale = !this.isShowSale
+      this.isShowMask = !this.isShowMask
     },
     changeBGC (event, index) {
       this.setBGC = index
+      this.setType = index
+      var name = this.curritem.types[index].title
+      this.setTitle = name
     },
     increment () {
       store.commit('increment')
@@ -126,6 +179,43 @@ export default {
 }
 </script>
 <style scoped>
+  .choosen{
+    display: flex;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+  }
+  .choosen div{
+    flex: 1;
+    line-height: 55px;
+    padding-left: 10px;
+  }
+  .more{
+    width: 15%;
+    text-align: center;
+    line-height: 4px;
+    font-size: 41px;
+    margin-right: 8px;
+    color: dimgray;
+  }
+  .saleTitle{
+    padding:3px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 240px;
+    text-overflow :ellipsis;
+  }
+  .sale{
+    border-top: solid 15px  rgb(238, 238, 238);
+    border-bottom: solid 15px  rgb(238, 238, 238);
+    padding-left: 9px;
+    padding-right: 9px;
+    width: 96%;
+    min-height: 140rpx;
+  }
+  .sale div{
+    float: left;
+  }
   button{
     border-radius: 0%;
     background: rgb(238, 238, 238);
@@ -150,11 +240,11 @@ export default {
   .singleTypes{
     float: left;
     margin-left: 19px;
-    color: black;
+    color: rgba(251, 77, 83, 1);
     padding: 6px;
     font-size: 12px;
     border-radius: 8px;
-    background: rgb(238, 238, 239);
+    background: rgba(247, 0, 17, 0.13);
   }
   .minialert{
     margin: 25px 20px 3px;
@@ -224,6 +314,8 @@ export default {
     font-size: 18px;
     padding: 5px;
     margin: 5px;
+    font-weight: 600;
+    color: rgb(87, 86, 86)
   }
   .bottom-bar {
     display: flex;

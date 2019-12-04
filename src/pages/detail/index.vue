@@ -1,6 +1,6 @@
 <template>
   <div class="main_container">
-    <div class="mask" v-show="isShowMask"></div>
+    <div :class="mask"></div>
     <swiper
       :indicator-dots='true'
       indicator-color='#d8d8d8'
@@ -27,24 +27,24 @@
     
     <div class='sale' style="display:flex;padding-top:6px" v-if="curritem.sale">
      <div style="width:23%;padding:3px;color:dimgray" >优惠</div>
-     <div @click="clickSale">
+     <div @click="triggerTransition">
       <div v-for='item in curritem.sale' class="saleTitle" :key="item.id">
         {{item.title}}
       </div>
       </div>
-      <div @click="clickSale" class="more">...</div>
+      <div @click="triggerTransition" class="more">...</div>
     </div>
 
     <div class="choosen">
       <div style="color:dimgray">已选</div>
-      <div style="flex:6" @click="click">{{curritem.weight}} {{setTitle}} {{count}}个</div>
-      <div style="font-size:41px;line-height:27px;color:dimgray" @click="click">...</div>
+      <div style="flex:6" @click="triggerTransition1">{{curritem.weight}} {{setTitle}} {{count}}个</div>
+      <div style="font-size:41px;line-height:27px;color:dimgray" @click="triggerTransition1">...</div>
     </div>
     <div style="background: rgb(238, 238, 238);width: 100%;height: 1rpx;"></div>
     <div class="choosen">
       <div style="color:dimgray">送至</div>
       <div style="flex:6"></div>
-      <div style="font-size:41px;line-height:27px;color:dimgray" @click="click">...</div>
+      <div style="font-size:41px;line-height:27px;color:dimgray" @click="triggerTransition">...</div>
     </div>
 
     <div style="background: rgb(238, 238, 238);width: 100%;height: 15px;"></div>
@@ -69,12 +69,12 @@
       <div class="bottom-button" @click="click">加入购物车</div>
     </div>
     <!-- 弹出式购买选项及数目菜单 -->
-    <div class="shoppingBar" v-show="isShowType">
+    <div class="shoppingBar"  :class="extraClasses1">
       <div class="onBarTop">
         <img class="displayImg" :src='curritem.item_display_images' />
         <div class="price">￥{{curritem.price}}</div>
         <div class="haveChosen">已选 {{curritem.weight}} {{setTitle}} {{count}}份</div>
-        <div class="closeBar" @click="click">×</div>
+        <div class="closeBar" @click="triggerTransition1">×</div>
       </div>
       <div class="onBarMid">
         <div class="minialert">产品类型</div>
@@ -89,22 +89,26 @@
         </div>
       <div class="onBarBottom">
         <div class="bottom-bar">
-          <div class="bottom-button" style="background-color: rgb(244, 170, 62);">立即购买</div>
-          <div class="bottom-button">加入购物车</div>
+          <div class="bottom-button" @click="triggerTransition1" style="background-color: rgb(244, 170, 62);">立即购买</div>
+          <div class="bottom-button" @click="triggerTransition1">加入购物车</div>
         </div>  
       </div>
       </div>
     </div>
     <!-- 弹出式优惠选项菜单 -->
-    <div class="shoppingBar" style="height:418rpx;" v-show="isShowSale">
+    <div class="shoppingBar" style="height:400rpx;bottom:-200px;" :class="extraClasses">
       <div style="display:flex">
         <div style="flex:8">
         <div v-for='item in curritem.sale' class="saleTitle"  :key="item.id">
           {{item.title}}
         </div>
         </div>
-        <div @click="clickSale" class="closeBar" style="flex:1;margin:0">×</div>
+        <div @click="triggerTransition" class="closeBar" style="flex:1;margin:0">×</div>
       </div>
+    </div>
+    <!-- 弹出式地址选择菜单 -->
+    <div  style="width:100%;height:200px;background:red;position:fixed;z-index:6">
+      <div style="width:100%;height:200px;background:red;position:absloute"></div>
     </div>
   </div>
 </template>
@@ -141,22 +145,34 @@ export default {
         ],
         item_display_images: '../../static/item/osm.jpg'
       },
-      isShowType: false,
-      isShowMask: false,
-      isShowSale: false,
       setBGC: 0,
       setType: 0,
-      setTitle: ''
+      setTitle: '',
+      extraClasses: '',
+      extraClasses1: '',
+      mask: ''
     }
   },
   methods: {
-    click () {
-      this.isShowType = !this.isShowType
-      this.isShowMask = !this.isShowMask
+    triggerTransition () {
+      var that = this
+      if (this.extraClasses === 'box-transition box-moved') {
+        that.extraClasses = 'box-transition'
+        that.mask = 'box-transition maskUnshow'
+      } else {
+        that.extraClasses = 'box-transition box-moved'
+        that.mask = 'box-transition mask'
+      }
     },
-    clickSale () {
-      this.isShowSale = !this.isShowSale
-      this.isShowMask = !this.isShowMask
+    triggerTransition1 () {
+      var that = this
+      if (this.extraClasses1 === 'box-transition box1-moved') {
+        that.extraClasses1 = 'box-transition'
+        that.mask = 'box-transition maskUnshow'
+      } else {
+        that.extraClasses1 = 'box-transition box1-moved'
+        that.mask = 'box-transition mask'
+      }
     },
     changeBGC (event, index) {
       this.setBGC = index
@@ -179,6 +195,32 @@ export default {
 }
 </script>
 <style scoped>
+/* 动态弹出控件 */
+  .box{
+    position: fixed;
+    z-index: 6;
+    background: red;
+    margin: 60rpx;
+    width: 100%;
+    height: 100px;
+  }
+  .box-transition {
+  transition: all 0.5s;
+  }
+  .box-moved {
+  margin-bottom: 200px;
+  }
+  .box1-moved {
+  margin-bottom: 718rpx;
+  }
+  @keyframes box-ani {
+  from {margin-left: 60rpx}
+  to {margin-left: 590rpx}
+  }
+  .box-animation {
+  animation: box-ani 1s alternate infinite;
+  }
+/* 已选和送至div */
   .choosen{
     display: flex;
     height: 60px;
@@ -276,11 +318,12 @@ export default {
   .shoppingBar{
     width: 100%;
     height: 718rpx;
-    bottom: 0;
+    bottom: -718rpx;
     background:rgb(247, 247, 247);
     position: fixed;
     z-index: 6;
   }
+  /* 遮罩层 */
   .mask{
     width: 100%;
     height: 200rem;
@@ -288,6 +331,10 @@ export default {
     z-index: 5;
     background: rgba(0, 0, 0, 0.65)
   }
+  .maksUnshow{
+    display: none;
+  }
+  /* 轮播图 */
   swiper {
     width: 100%;
     height: 335px;
@@ -302,7 +349,7 @@ export default {
     width: 100%;
     height: 100%;
   }
-
+/* 主界面 */
   .price {
     margin-left: 11px;
     font-size: 22px;

@@ -1,6 +1,8 @@
 <template>
   <div class="main_container">
+    <!-- 遮罩层 -->
     <div :class="mask"></div>
+    <!-- 轮播图 -->
     <swiper
       :indicator-dots='true'
       indicator-color='#d8d8d8'
@@ -18,13 +20,14 @@
       </swiper-item>
 
     </swiper>
+    <!-- 商品价格及full-title -->
     <div class="price">
       ￥{{curritem.price}}
     </div>
     <div class="full_title">
       {{curritem.full_title}}
     </div>
-    
+    <!-- 优惠类型选择 -->
     <div class='sale' style="display:flex;padding-top:6px" v-if="curritem.sale">
      <div style="width:23%;padding:3px;color:dimgray" >优惠</div>
      <div @click="triggerTransition">
@@ -34,7 +37,7 @@
       </div>
       <div @click="triggerTransition" class="more">...</div>
     </div>
-
+    <!-- 已选菜单 -->
     <div class="choosen">
       <div style="color:dimgray">已选</div>
       <div style="flex:6" @click="triggerTransition1">{{curritem.weight}} {{setTitle}} {{count}}个</div>
@@ -46,7 +49,7 @@
       <div style="flex:6"></div>
       <div style="font-size:41px;line-height:27px;color:dimgray" @click="triggerTransition">...</div>
     </div>
-
+    
     <div style="background: rgb(238, 238, 238);width: 100%;height: 15px;"></div>
     <div v-for="img in topSwipers" :key="img.id">
       <img style='width:100%' :src="img.outterImage">
@@ -96,14 +99,16 @@
       </div>
     </div>
     <!-- 弹出式优惠选项菜单 -->
-    <div class="shoppingBar" style="height:400rpx;bottom:-200px;" :class="extraClasses">
-      <div style="display:flex">
-        <div style="flex:8">
-        <div v-for='item in curritem.sale' class="saleTitle"  :key="item.id">
-          {{item.title}}
+    <div class="shoppingBar"  :class="extraClasses">
+      <div style="display:flex;background:lightgray;height:34px">
+        <div style="flex:8;color:dimgray;line-height:34px;margin-left:10px"> 优惠</div>
+        <div @click="triggerTransition" class="closeBar" style="flex:1;margin:-10px 0 0 0;">×</div>
+      </div>
+      <div >
+        <div v-for='item in curritem.sale' style="display: flex;margin: 10px;height:70px; border-radius: 10px;border-bottom: solid 5px rgba(251, 77, 83, 1);box-shadow:6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);" :key="item.id">
+          <div style="flex:3;line-height:70px;font-size:35px;margin-left:21px;color:rgba(251, 77, 83, 1);">{{item.sale}}</div>
+          <div style="flex:7;">{{item.title}}</div>
         </div>
-        </div>
-        <div @click="triggerTransition" class="closeBar" style="flex:1;margin:0">×</div>
       </div>
     </div>
     <!-- 弹出式地址选择菜单 -->
@@ -154,6 +159,7 @@ export default {
     }
   },
   methods: {
+    // 弹出控件js
     triggerTransition () {
       var that = this
       if (this.extraClasses === 'box-transition box-moved') {
@@ -174,12 +180,14 @@ export default {
         that.mask = 'box-transition mask'
       }
     },
+    // 修改以及选定商品种类
     changeBGC (event, index) {
       this.setBGC = index
       this.setType = index
       var name = this.curritem.types[index].title
       this.setTitle = name
     },
+    // 计数器函数
     increment () {
       store.commit('increment')
     },
@@ -208,7 +216,7 @@ export default {
   transition: all 0.5s;
   }
   .box-moved {
-  margin-bottom: 200px;
+  margin-bottom: 718rpx;
   }
   .box1-moved {
   margin-bottom: 718rpx;

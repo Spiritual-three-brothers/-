@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "window": {
+    "background-color":"red"
+  }
 }

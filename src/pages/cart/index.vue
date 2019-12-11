@@ -161,11 +161,14 @@ export default {
 /* 顶部bar */
 .top-bar{
   width: 100%;
-  height: 40px;
+  height: 77rpx;
   display: flex;
-  line-height: 40px;
+  line-height: 80rpx;
   text-align: center;
   background: white;
+  position: fixed;
+  z-index: 10;
+  margin-top: -34px;
 }
 .position{
   color:dimgray;

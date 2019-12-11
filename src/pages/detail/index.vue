@@ -22,7 +22,7 @@
     </swiper>
     <!-- 商品价格及full-title -->
     <div class="price">
-      ￥{{curritem.price}}
+     <div style="font-size:13px;float:left;margin-top:5px"> ￥</div>{{curritem.price}}
     </div>
     <div class="full_title">
       {{curritem.full_title}}
@@ -32,6 +32,7 @@
      <div style="width:23%;padding:3px;color:dimgray" >优惠</div>
      <div @click="triggerTransition">
       <div v-for='item in curritem.sale' class="saleTitle" :key="item.id">
+        <div class="sale-icon">优惠券</div>
         {{item.title}}
       </div>
       </div>
@@ -51,6 +52,25 @@
     </div>
     
     <div style="background: rgb(238, 238, 238);width: 100%;height: 15px;"></div>
+      <!-- 店铺信息 -->
+    <div class="shop-bar">
+      <div class="shop-info">
+        <img :src="curritem.item_display_images" style="flex:2">
+        <div>{{curritem.shopName}}</div>
+      </div>
+      <div class="shop-follower">
+        <div style="flex: 1;border-right: solid 1px lightgray;">
+          <div style="font-size:font-size: 15px;font-weight: bold;color: black;">17万</div>
+          <div>粉丝人数</div>
+        </div>
+        <div style="flex:1">
+          <div style="font-size:font-size: 15px;font-weight: bold;color: black;">22个</div>
+          <div>全部商品</div>
+        </div>
+      </div>
+      <div class="enter-shop">  <i class="iconfont" style="color: dimgray;margin-top: -1rpx;float: left;margin-right: 6px;">&#xe703;</i>进入店铺</div>
+    </div>
+    <!-- 详情 -->
     <div v-for="img in topSwipers" :key="img.id">
       <img style='width:100%' :src="img.outterImage">
     </div>
@@ -141,6 +161,7 @@ export default {
         price: '12.3',
         full_title: '欧诗漫OSM美白化妆品套装 营养美肤晶彩无暇补水保湿护肤品礼盒套装女',
         weight: '250ml',
+        shopName: '东百好果汁发哥旗舰店',
         types: [
           {id: 0, title: '欧诗漫瓶装'},
           {id: 1, title: '欧诗漫简装'}
@@ -203,6 +224,49 @@ export default {
 }
 </script>
 <style scoped>
+/* 店铺相关css */
+  .shop-follower{
+    display: flex;
+    text-align: center;
+    color: dimgray;
+    font-size: 14px;
+    margin-top: 10px;
+
+  }
+  .shop-info{
+    display: flex;
+  }
+  .shop-info image{
+    flex: 2;
+    width: 56rpx;
+    height: 63rpx;
+    border: solid 1px lightgray;
+    margin-top: 15px;
+    margin-left: 13px;
+  }
+  .shop-info div{
+    flex: 7;
+    padding: 10px;
+    line-height: 40px;
+    font-size: 13px;
+    color: rgb(50,50,50);
+
+  }
+  .shop-bar{
+    width: 100%;
+    height: 180px;
+    background: white
+  }
+  .enter-shop{
+    margin-left: 38%;
+    margin-top: 25px;
+    border: solid 1px lightgray;
+    margin-right: 38%;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 13px;
+    color: dimgray;
+  }
 /* 动态弹出控件 */
   .box{
     position: fixed;
@@ -248,12 +312,21 @@ export default {
     margin-right: 8px;
     color: dimgray;
   }
+  .sale-icon{
+    font-size: 12px;
+    color: #FB4D53;
+    border: solid 1px #FB4D53;
+    border-radius: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
   .saleTitle{
-    padding:3px;
+    padding:14rpx;
     overflow: hidden;
     white-space: nowrap;
     width: 240px;
     text-overflow :ellipsis;
+    font-size: 12px;
   }
   .sale{
     border-top: solid 15px  rgb(238, 238, 238);
@@ -360,17 +433,19 @@ export default {
 /* 主界面 */
   .price {
     margin-left: 11px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     margin-top: 5px;
     color: #FB4D53;
   }
   .full_title {
-    font-size: 18px;
+    font-size: 14px;
     padding: 5px;
     margin: 5px;
     font-weight: 600;
-    color: rgb(87, 86, 86)
+    color: rgba(16,16,16,1);
+    font-family: SourceHanSansSC- bold;
+    line-height: 19px;
   }
   .bottom-bar {
     display: flex;

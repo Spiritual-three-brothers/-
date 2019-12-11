@@ -14,11 +14,11 @@
         <!-- 账单相关div -->
         <div class='order' >
           <ul class="icon">
-            <li><div class="icon iconfont" >&#58891;</div></li>
-            <li><div class="icon iconfont" >&#58891;</div></li>
-            <li><div class="icon iconfont" >&#58909;</div></li>
-            <li><div class="icon iconfont" >&#59147;</div></li>
-            <li><div class="icon iconfont" >&#58928;</div></li>
+            <li><div class="icon iconfont" >&#xe704;</div></li>
+            <li><div class="icon iconfont" >&#xe705;</div></li>
+            <li><div class="icon iconfont" >&#xe706;</div></li>
+            <li><div class="icon iconfont" >&#xe701;</div></li>
+            <li><div class="icon iconfont" >&#xe707;</div></li>
           </ul>
           <div class="gen-table">
          <div class="gen-tr">

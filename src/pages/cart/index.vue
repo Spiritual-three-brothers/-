@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import store from '../detail/store'
+// import store from '../detail/store'
 export default {
   data () {
     return {
@@ -107,15 +107,23 @@ export default {
         for (var item in this.main[shop]) {
           if (event.currentTarget.id === this.main[shop][item].id) {
             var currCount = this.main[shop][item].count + 1
-            // that.main[shop][item].count = 'currCount'
             that.$set(that.main[shop][item], 'count', currCount)
             console.log(currCount)
           }
         }
       }
     },
-    decrement () {
-      store.commit('decrement')
+    decrement (event) {
+      var that = this
+      for (var shop in this.main) {
+        for (var item in this.main[shop]) {
+          if (event.currentTarget.id === this.main[shop][item].id) {
+            var currCount = this.main[shop][item].count - 1
+            that.$set(that.main[shop][item], 'count', currCount)
+            console.log(currCount)
+          }
+        }
+      }
     }
   }
 }

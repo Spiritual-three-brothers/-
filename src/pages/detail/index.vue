@@ -71,9 +71,69 @@
       <div class="enter-shop">  <i class="iconfont" style="color: dimgray;margin-top: -1rpx;float: left;margin-right: 6px;">&#xe703;</i>进入店铺</div>
     </div>
     <!-- 详情 -->
-    <div v-for="img in topSwipers" :key="img.id">
-      <img style='width:100%' :src="img.outterImage">
+    <div>
+     <div class="navbar">
+      <block v-for="(item,index) in tabs" :key="index">
+        <div :id="index" :class="{'navbar_item_on':activeIndex == index}" class="navbar_item" @click="tabClick">
+          <div class="navbar_title" @click="item_click" :class="onselected">{{item.name}}</div>
+        </div>
+      </block>
+      <div class="navbar_slider" :class="navbarSliderClass"></div>
     </div>
+    <!-- 用来容纳三个商品详情容器的div -->
+    <div>
+      <!-- 商品介绍栏目的内容 -->
+      <div :hidden="activeIndex != 0">
+        <div v-for="img in topSwipers" :key="img.id">
+          <img :src="img.outterImage"/>
+        </div>
+      </div>
+      <!-- 商品规格栏目的内容 -->
+      <div :hidden="activeIndex != 1">
+        <div style="padding:11px">
+
+          <div style="display:flex;color:dimgray;margin-top:10px;margin-bottom:15px;">
+            <div style="flex:3;background:dimgray;height:2rpx;margin-top:10px"></div>
+            <div style="flex:2;text-align:center">包装清单</div>
+            <div style="flex:3;background:dimgray;height:2rpx;margin-top:10px"></div>
+          </div>
+
+          <div style="text-align:left;font-size:13px;color:dimgray">{{curritem.weight}} {{setTitle}} {{count}}件</div>
+
+          <div style="display:flex;color:dimgray;margin-top:10px;margin-bottom:15px;">
+            <div style="flex:3;background:dimgray;height:2rpx;margin-top:10px"></div>
+            <div style="flex:2;text-align:center">商品参数</div>
+            <div style="flex:3;background:dimgray;height:2rpx;margin-top:10px"></div>
+          </div>
+          
+          <div class="fs-table">
+            <div class="fs-title">商品名称</div>
+            <div class="fs-content">{{curritem.full_title}}</div>
+          </div>
+          <div class="fs-table">
+            <div class="fs-title">商品单价</div>
+            <div class="fs-content">{{curritem.price}}</div>
+          </div>
+          <div class="fs-table">
+            <div class="fs-title">商品容量</div>
+            <div class="fs-content">{{curritem.weight}}</div>
+          </div>
+          <div class="fs-table">
+            <div class="fs-title">商品种类</div>
+            <div class="fs-content">{{curritem.types[title]}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- 售后保障栏目的内容 -->
+      <div :hidden="activeIndex != 2">
+        <div style="padding:11px;">
+          <div style="font-size:13px;color:dimgray;line-height:23px;border:solid 1px lightgray;padding:11px;padding-bottom:20px">{{afterSale}}</div>
+          <div class="iconfont" style="color: #FB4D53;font-size: 47px;text-align: center;margin-top:-18px;">&#xe708;</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
     <div style="height:200px"></div>
     <div class="bottom-bar">
       <div class="left-block">
@@ -171,12 +231,31 @@ export default {
         ],
         item_display_images: '../../static/item/osm.jpg'
       },
+      tabs: [
+        {
+          name: '商品介绍',
+          type: '1',
+          checked: true
+        },
+        {
+          name: '规格参数',
+          type: '2',
+          checked: true
+        },
+        {
+          name: '售后保障',
+          type: '3',
+          checked: true
+        }
+      ],
+      activeIndex: 0,
       setBGC: 0,
       setType: 0,
       setTitle: '',
       extraClasses: '',
       extraClasses1: '',
-      mask: ''
+      mask: '',
+      afterSale: '本产品严格不按照国家的三包政策，坚决本着不退不换的原则，让每一个用户享受独一无二的博彩型购物体验；只需三分钟，你就会跟我一样爱上这款平台。欧非鉴定唯一指定平台，用户的购买行为以及结果完全由用户自理并且承担，商家不必承担任何售出后责任.如果用户在购买后有退换货品的需求，我们会第一时间为用户寄出安眠药一盒，让您在漫漫长梦中享有一个舒适的睡眠并且懂得梦里啥都有的原则'
     }
   },
   methods: {
@@ -214,9 +293,26 @@ export default {
     },
     decrement () {
       store.commit('decrement')
+    },
+    tabClick (e) {
+      this.activeIndex = e.currentTarget.id
+    },
+    item_click () {
+      this.onselected = 'bar-selected'
     }
   },
   computed: {
+    navbarSliderClass () {
+      if (this.activeIndex === 0) {
+        return 'navbar_slider_0'
+      }
+      if (this.activeIndex === 1) {
+        return 'navbar_slider_1'
+      }
+      if (this.activeIndex === 2) {
+        return 'navbar_slider_2'
+      }
+    },
     count () {
       return store.state.count
     }
@@ -224,6 +320,120 @@ export default {
 }
 </script>
 <style scoped>
+/* 表格样式 */
+.fs-table{
+  display: flex;
+  font-size: 13px;
+  color: dimgray;
+}
+.fs-content{
+  flex: 4;
+  border: solid 1rpx lightgray; 
+  text-align: center;
+  padding: 10px;
+}
+.fs-title{
+  flex: 1;
+  border: solid 1rpx lightgray; 
+  text-align: center;
+  padding: 10px;
+}
+/* 三滑動栏 */
+.bar-selectedw{
+  background: #FB4D53;
+  color: red
+}
+.content {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 50px;
+  /* overflow: auto; */
+  -webkit-overflow-scrolling: touch;
+}
+
+.swiper-item {
+  height: 100%;
+  text-align: center;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  z-index: 500;
+  height: 50px;
+  width: 100%;
+  border-bottom: solid 0.5rpx lightgray;
+}
+
+.navbar_item {
+  position: relative;
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.navbar_item {
+  color: balck;
+}
+.navbar_item_on {
+  border-bottom: solid 2px #FB4D53;
+}
+.navbar_title {
+  font-weight: 500;
+  display: inline-block;
+  font-size: 15px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.navbar_slider {
+  position: absolute;
+  content: " ";
+  left: 0;
+  bottom: 0;
+  width: 6em;
+  height: 3px;
+  background-color: white;
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.navbar_slider_0 {
+  left: 29rpx;
+  transform: translateX(0);
+}
+
+.navbar_slider_1 {
+  left: 29rpx;
+  transform: translateX(250rpx);
+}
+
+.navbar_slider_2 {
+  left: 29rpx;
+  transform: translateX(500rpx);
+}
+.controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  z-index: 8888;
+  top: 80;
+  height: 50px;
+  width: 100%;
+  background-color: #298de5;
+}
 /* 店铺相关css */
   .shop-follower{
     display: flex;
@@ -324,7 +534,7 @@ export default {
     padding:14rpx;
     overflow: hidden;
     white-space: nowrap;
-    width: 240px;
+    /* width: 240px; */
     text-overflow :ellipsis;
     font-size: 12px;
   }

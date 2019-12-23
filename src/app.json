@@ -32,7 +32,7 @@
       "selectedIconPath": "static/tabs/cart-active.png"
     },{
       "text": "订单",
-      "pagePath": "pages/detail/main",
+      "pagePath": "pages/cart/main",
       "iconPath": "static/tabs/order.png",
       "selectedIconPath": "static/tabs/order_active.png"
     }, {

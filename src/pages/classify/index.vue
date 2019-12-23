@@ -11,7 +11,7 @@
                 </div>
                 <div class="item-list">
 
-                  <div class="item-content">
+                  <div class="item-content" @click="navigate">
                     <div class="item-container">
                       <div class="image-container">
                         <img src="../../../static/item/osm.jpg">
@@ -63,6 +63,7 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
           </scroll-view>
@@ -147,6 +148,10 @@ export default {
     },
     clickSub (idx) {
       this.selectedSub = idx
+    },
+    navigate () {
+      console.log(123321)
+      wx.navigateTo({url: '../detail/main'})
     }
   }
 }

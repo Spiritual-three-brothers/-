@@ -27,7 +27,7 @@
     "mpvue": "^2.0.0",
     "mpvue-picker": "^2.1.6",
     "node-sass": "^4.13.0",
-    "sass-loader": "7.3.1",
+    "python2": "0.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -73,6 +73,7 @@
     "px2rpx-loader": "^0.1.10",
     "relative": "^3.0.2",
     "rimraf": "^2.6.0",
+    "sass-loader": "^7.3.1",
     "semver": "^5.3.0",
     "shelljs": "^0.8.1",
     "uglifyjs-webpack-plugin": "^1.2.5",

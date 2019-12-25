@@ -30,10 +30,12 @@
     <!-- 优惠类型选择 -->
     <div class='sale' style="display:flex;padding-top:6px" v-if="curritem.sale">
      <div class="off">优惠</div>
+     <div  class='sale-bar' style="flex: 6">
      <div @click="triggerTransition">
       <div v-for='item in curritem.sale' class="saleTitle" :key="item.id">
         <div class="sale-icon">优惠券</div>
         {{item.title}}
+      </div>
       </div>
       </div>
       <div @click="triggerTransition" class="more">...</div>
@@ -148,8 +150,8 @@
           </div>
         </div>
       </div>
-      <div class="bottom-button" @click="click">立即购买</div>
-      <div class="bottom-button" @click="click">加入购物车</div>
+      <div class="bottom-button" @click="triggerTransition1">立即购买</div>
+      <div class="bottom-button" @click="triggerTransition1">加入购物车</div>
     </div>
     <!-- 弹出式购买选项及数目菜单 -->
     <div class="shoppingBar"  :class="extraClasses1">
@@ -170,10 +172,10 @@
              <button>{{count}}</button>
             <button @click="increment">+</button>
         </div>
-      <div class="onBarBottom">
-        <div class="bottom-bar">
-          <div class="bottom-button" @click="triggerTransition1" style="background-color: rgb(244, 170, 62);">立即购买</div>
-          <div class="bottom-button" @click="triggerTransition1">加入购物车</div>
+      <div>
+        <div class="sale-bottom-bar ">
+          <div class="sale-bottom-button" @click="triggerTransition1" >加入购物车</div>
+          <div class="sale-bottom-button" @click="triggerTransition1" style="background: #FB4D53">立即购买</div>
         </div>
       </div>
       </div>

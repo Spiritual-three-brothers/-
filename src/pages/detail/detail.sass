@@ -1,21 +1,21 @@
-.full_title 
+.full_title
     color: red
 
 
-.fs-table 
+.fs-table
     display: flex
     font-size: 13px
     color: dimgray
 
 
-.fs-content 
+.fs-content
     flex: 4
     border: solid 1rpx lightgray
     text-align: center
     padding: 10px
 
-  
-.fs-title 
+
+.fs-title
     flex: 1
     border: solid 1rpx lightgray
     text-align: center
@@ -28,7 +28,7 @@
     color: red
 
 
-.content 
+.content
     box-sizing: border-box
     height: 100%
     padding-top: 50px
@@ -186,49 +186,91 @@
 
 .choosen
     display: flex
-    height: 60px
-    line-height: 60px
+    min-height: 35px
+    box-sizing: border-box
     width: 100%
+    padding: 0 9px 0 9px
+    .text
+      line-height: 35px
+      color: rgb(112, 112, 112)
+      font-size: 13px
+    .sku
+      flex: 1
+      line-height: 35px
+      font-size: 12px
+      padding-left: 10px
 
-.choosen div
-    flex: 1
-    line-height: 55px
-    padding-left: 10px
+.address
+    display: flex
+    min-height: 70px
+    box-sizing: border-box
+    width: 100%
+    padding: 0 9px 0 9px
+    .text
+      color: rgb(112, 112, 112)
+      font-size: 13px
+      padding-top: 6px
+    .address-detail
+      flex: 1
+      font-size: 12px
+      padding-left: 10px
+      div
+        padding: 6px 3px 3px 3px
+      .bottom
+        padding-top: 3px
+        >.text
+          font-size: 11px
+          color: rgb(149, 148, 148)
+        >.span
+          color: #FB4D53
+
+
+
 
 .more
-    width: 15%
+    line-height: 6px
     text-align: center
-    line-height: 4px
-    font-size: 41px
-    margin-right: 8px
-    color: dimgray
-    flex: 0
+    font-size: 30px
+    color: rgb(112, 112, 112)
+    flex: 0 0 40px
+    padding-top: 6px
 
-.sale-icon
-    font-size: 12px
-    color: #FB4D53
-    border: solid 1px #FB4D53
-    border-radius: 5px
-    padding-left: 4px
-    padding-right: 4px
+
 
 .saleTitle
-    padding: 14rpx
+    padding: 6px
     overflow: hidden
     white-space: nowrap
     text-overflow: ellipsis
     font-size: 12px
+    display: flex
+    align-items: center
+    .sale-icon
+      font-size: 10px
+      color: #FB4D53
+      border: solid 1px #FB4D53
+      border-radius: 5px
+      padding: 3px 5px 3px 5px
+      margin-right: 5px
 
 .sale-bar
-    flex: 7  
+    flex: 1
 
 .sale
     border-top: solid 15px  rgb(238, 238, 238)
     border-bottom: solid 15px  rgb(238, 238, 238)
     padding-left: 9px
     padding-right: 9px
-    width: 96%
-    min-height: 140rpx
+    box-sizing: border-box
+    min-height: 70px
+    display: flex
+    .off
+      flex: 0 0 30px
+      font-size: 13px
+      padding-top: 6px
+      color: rgb(112, 112, 112)
+
+
 
 .sale div
     float: left
@@ -313,6 +355,11 @@ button[disabled]
     background: #F7F7F7
     position: fixed
     z-index: 7
+    .off-text
+      flex: 8
+      color: dimgray
+      line-height: 34px
+      margin-left: 10px
 
 .mask
     width: 100%

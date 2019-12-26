@@ -6059,6 +6059,11 @@ px2rpx@^0.5.3:
     extend "~3.0.1"
     fs-extra "~0.16.3"
 
+python2@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/python2/-/python2-0.0.1.tgz#8bb6f03346c1aeb156a0dcae7c1cc3d903e06310"
+  integrity sha1-i7bwM0bBrrFWoNyufBzD2QPgYxA=
+
 q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
@@ -6528,7 +6533,7 @@ sass-graph@^2.2.4:
     scss-tokenizer "^0.2.3"
     yargs "^7.0.0"
 
-sass-loader@7.3.1:
+sass-loader@^7.3.1:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-7.3.1.tgz#a5bf68a04bcea1c13ff842d747150f7ab7d0d23f"
   integrity sha512-tuU7+zm0pTCynKYHpdqaPpe+MMTQ76I9TPZ7i4/5dZsigE350shQWe5EZNl5dBidM49TPET75tNqRbcsUZWeNA==

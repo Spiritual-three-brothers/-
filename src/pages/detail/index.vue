@@ -28,9 +28,9 @@
       {{curritem.full_title}}
     </div>
     <!-- 优惠类型选择 -->
-    <div class='sale' style="display:flex;padding-top:6px" v-if="curritem.sale">
+    <div class='sale' v-if="curritem.sale">
      <div class="off">优惠</div>
-     <div  class='sale-bar' style="flex: 6">
+     <div class='sale-bar'>
      <div @click="triggerTransition">
       <div v-for='item in curritem.sale' class="saleTitle" :key="item.id">
         <div class="sale-icon">优惠券</div>
@@ -42,15 +42,21 @@
     </div>
     <!-- 已选菜单 -->
     <div class="choosen">
-      <div style="color:dimgray">已选</div>
-      <div style="flex:6" @click="triggerTransition1">{{curritem.weight}} {{setTitle}} {{count}}个</div>
-      <div style="font-size:41px;line-height:27px;color:dimgray" @click="triggerTransition1">...</div>
+      <div class="text">已选</div>
+      <div class="sku" @click="triggerTransition1">{{curritem.weight}} {{setTitle}} {{count}}个</div>
+      <div class="more" @click="triggerTransition1">...</div>
     </div>
     <div style="background: rgb(238, 238, 238);width: 100%;height: 1rpx;"></div>
-    <div class="choosen">
-      <div style="color:dimgray">送至</div>
-      <div style="flex:6"></div>
-      <div style="font-size:41px;line-height:27px;color:dimgray" @click="triggerTransition">...</div>
+    <div class="address">
+      <div class="text">送至</div>
+      <div class="address-detail">
+        <div class="upper">成都市武侯区桂溪社区泰和家园3幢丰巢驿站</div>
+        <div class="bottom">
+          <span class="span">[现货]</span>
+          <span class="text">23:55前下单预计明天送达</span>
+        </div>
+      </div>
+      <div class="more" @click="triggerTransition">...</div>
     </div>
 
     <div style="background: rgb(238, 238, 238);width: 100%;height: 15px;"></div>
@@ -183,7 +189,7 @@
     <!-- 弹出式优惠选项菜单 -->
     <div class="shoppingBar"  :class="extraClasses">
       <div style="display:flex;background:lightgray;height:34px">
-        <div style="flex:8;color:dimgray;line-height:34px;margin-left:10px"> 优惠</div>
+        <div class="off-text"> 优惠</div>
         <div @click="triggerTransition" class="closeBar" style="flex:1;margin:-10px 0 0 0;">×</div>
       </div>
       <div >

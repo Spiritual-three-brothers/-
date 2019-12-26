@@ -86,14 +86,14 @@
           <div class="navbar_title" @click="item_click" :class="onselected">{{item.name}}</div>
         </div>
       </block>
-      <div class="navbar_slider" :class="navbarSliderClass"></div>
+<!--      <div class="navbar_slider" :class="navbarSliderClass"></div>-->
     </div>
     <!-- 用来容纳三个商品详情容器的div -->
     <div>
       <!-- 商品介绍栏目的内容 -->
       <div :hidden="activeIndex != 0">
         <div v-for="img in topSwipers" :key="img.id">
-          <img :src="img.outterImage"/>
+          <img :src="img.outterImage" style="width: 100%"/>
         </div>
       </div>
       <!-- 商品规格栏目的内容 -->

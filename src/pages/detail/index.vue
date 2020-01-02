@@ -147,11 +147,11 @@
       <div class="left-block">
         <div style="display: flex">
           <div style="flex: 1;text-align: center;background:white">
-            <div class="icon iconfont" style="height: 20px">&#xe603;</div>
+            <div class="icon iconfont" style="height: 20px">&#xe710;</div>
             <div style="font-size: 10px;">购物车</div>
           </div>
           <div style="flex: 1;text-align: center;background:white">
-            <div class="icon iconfont" style="height: 20px">&#xe604;</div>
+            <div class="icon iconfont" style="height: 20px">&#xe709;</div>
             <div style="font-size: 10px;">商城</div>
           </div>
         </div>
@@ -200,8 +200,8 @@
       </div>
     </div>
     <!-- 弹出式地址选择菜单 -->
-    <div  style="width:100%;height:200px;background:red;position:fixed;z-index:6">
-      <div style="width:100%;height:200px;background:red;position:absloute"></div>
+    <div  style="width:100%;height:400px;background:red;position:fixed;z-index:6">
+      <div style="width:100%;height:200px;background:red;position:absloute">sadnisanodso</div>
     </div>
   </div>
 </template>

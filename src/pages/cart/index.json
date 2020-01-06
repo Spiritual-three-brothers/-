@@ -1,6 +1,7 @@
 {
   "usingComponents": {},
   "window": {
-    "background-color":"red"
+    "background-color":"red",
+    "navigationBarTitleText": "购物车"
   }
 }

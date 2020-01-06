@@ -1,28 +1,24 @@
 <template>
   <div class="main-container">
-    <!-- 顶部地址设置bar -->
-    <div class="top-bar">
-      <i class="iconfont" style="color: lightgray;padding-left: 10px;flex:1">&#xe702;</i>
-      <div class="position">沈阳市东百大街钢琴私塾112号0291室第20个撤shuor</div>
-      <div class="position" style="flex:2">修改</div>
-    </div>
     <!-- 购物车商品 -->
     <div class="cart-container">
       <div class="single-cart" v-for="(shop,name) in main" :key="shop.id">
-        <div style="display:flex">
-        <div style="width:18px;height:18px;border:solid 1px lightgray;border-radius:10px" ><i class="iconfont"  :class="BGP" style="color:#FB4D53">&#xe602;</i></div>
+        <div style="display:flex;margin-top:7px">
+        <div style="left: 13px;width: 20px;height: 20px;line-height: 20px;text-align: center;border-radius:16px;border: 2px solid rgba(187, 187, 187, 1);" ><i class="iconfont"  :class="BGP" style="color: #FB4D53;margin-left: -3px;margin-top: 1px;font-size: 24px;">&#xe602;</i></div>
+        <i class="iconfont" style="margin-top: -1px;margin-left: 8px;font-size: 22px;color: dimgray;">&#xe703;</i>
         <div class="shop-title">{{name}}</div>
-        <i class="iconfont" style="color:#FB4D53;flex:1;margin-top: 2px;">&#xe703;</i>
+        <div style="color: gray;font-size: 23px;line-height: 23px;margin-left: 4px;">></div>
         </div>
-        <div v-for="item in shop" :key="item.id" style="margin-top:10px;display:flex">
-          <img :src="item.picurl" style="flex:3;height:100px;border-radius:10px;box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.1);"/>
+        <div v-for="item in shop" :key="item.id" style="margin-top:19px;display:flex">
+          <div style="left: 13px;width: 20px;height: 20px;line-height: 20px;text-align: center;border-radius:16px;border: 2px solid rgba(187, 187, 187, 1);margin-top: 36px;" ><i class="iconfont"  :class="BGP" style="color: #FB4D53;margin-left: -3px;margin-top: 1px;font-size: 24px;">&#xe602;</i></div>
+          <img :src="item.picurl" style="flex: 3;height: 97px;width: 97px;margin-left: 8px;box-shadow: 6rpx 6rpx 20rpx rgba(0,0,0,0.2);box-shadow: 5px 4px 10px rgba(0,0,0,0.05);"/>
           <div class="item-info" style="flex:7">
-            <div>{{item.title}}</div>
-            <div style="font-family:none;font-size:15px">{{item.type}}</div>
-            <div style="color:#FB4D53;font-family:none">￥{{item.pirce}}</div>
+            <div style="color: rgba(16, 16, 16, 1);font-size: 15px;font-family: SourceHanSansSC-regular;margin-left:16px">{{item.title}}</div>
+            <div style="color: rgba(16, 16, 16, 1);font-size: 15px;font-family: SourceHanSansSC-regular;margin-left:16px">{{item.type}}</div>
+            <div style="color: #FB4D53;font-family: none;margin-left: 12px;font-size: 18px;font-weight: bold;margin-top: 15px;">￥{{item.pirce}}</div>
             <div class="counter-warp">
               <button @click="decrement($event)" :id="item.id" v-bind:disabled='count == 1'>-</button>
-              <button>{{item.count}}</button>
+              <button style="font-weight:400;color:black;font-size:15px;width:32px">{{item.count}}</button>
               <button @click="increment($event)" :id="item.id">+</button>
             </div>
           </div>
@@ -33,15 +29,14 @@
     <div class="bottom-bar">
       <!-- 全选控件 -->
       <div style="flex:1;text-align:center;line-height:2">
-        <div class="select-all" @click="selectShop"><i class="iconfont"  :class="BGP" style="color:#FB4D53;margin-top: -9px;margin-left: -1px;">&#xe602;</i></div>
-        <div style="color:dimgray;font-size:12px">全选</div>
+        <div class="select-all" @click="selectShop" style="left: 13px;width: 20px;height: 20px;line-height: 20px;text-align: center;border-radius:16px;border: 2px solid rgba(187, 187, 187, 1);"><i class="iconfont"  :class="BGP" style="color: #FB4D53;margin-left: -3px;margin-top: 1px;font-size: 24px;">&#xe602;</i></div>
+        <div style="color: dimgray;font-size: 12px;margin-top: -4px;font-size: 11px;margin-left: 9px;">全选</div>
       </div>
       <!-- 总计控件 -->
-      <div style="flex:5;">
-        <div style="text-align:right;color:dimgray;margin-right:10px;">总计：0</div>
-      </div>
+        <div style="text-align:right;color:dimgray;flex:4;font-weight:500">总计：</div>
+        <div style="text-align:left;color:dimgray;margin-right:10px;color:#FB4D53;flex:1.5">￥{{total_price}}</div>
       <!-- 结算button -->
-      <div style="flex:2;background:red">结算</div>
+      <div style="flex:2.5;font-size:13px;background:#FB4D53;font-weight:500">去结算({{count_goods}}件)</div>
     </div>
   </div>
 </template>
@@ -53,6 +48,8 @@ export default {
     return {
       BGC: 'bgcDefault',
       BGP: 'BGPdefault transition',
+      total_price: 0,
+      count_goods: 0,
       main: {
         AA旗舰店: [
           {id: '11', title: '金盆洗脚城会员黑金卡', picurl: 'http://picapi.zhituad.com/photo/35/18/44ABE.jpg', type: '年卡', pirce: 120, count: 1},
@@ -80,11 +77,20 @@ export default {
       var that = this
       if (this.BGP === 'changeBGP transition') {
         that.BGP = 'BGPdefault transition'
+        this.total_price = 0
+        this.count_goods = 0
       } else {
         that.BGP = 'changeBGP transition'
-        // for (var shop in this.main) {
-        //   for (var item in this.main)
-        // }
+        var total = 0
+        var counter = 0
+        for (var shop in this.main) {
+          for (var item in this.main[shop]) {
+            total += this.main[shop][item].pirce * this.main[shop][item].count
+            this.total_price = total
+            counter += 1
+            this.count_goods = counter
+          }
+        }
       }
     },
     selectButton () {
@@ -130,41 +136,77 @@ export default {
 </script>
 
 <style>
+/* button */
+button{
+  position: relative;
+  display: block;
+  padding-left: 4px;
+  padding-right: 5px;
+  box-sizing: border-box;
+  font-size: 21px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #000;
+  background-color: #f8f8f8;
+  line-height: 18px;
+  border-radius: 0px;
+  color: dimgray;
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
+}
+button::after {
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 0px;
+}
+
 /* 购物车内容 */
+.cart-container{
+  margin-bottom: 75px;
+}
 .changeBGP{
   display: block;
 }
 .BGPdefault{
   display: none;
 }
-.item-info div{
+/* .item-info div{
   margin-left: 10px;
   color: dimgray;
   font-weight: bold;
   font-family: 宋体;
-}
+} */
 .shop-title{
+  color: rgba(16, 16, 16, 1);
+  font-size: 16px;
+  margin-left: 4px;
+  font-family: SourceHanSansSC-bold;
   font-weight: bold;
-  color: dimgray;
-  flex: -1;
-  margin-right: 10px;
-}
-.cart-container{
-  margin-top: 30px
+  line-height: 23px;
 }
 .counter-warp{
     float: right;
-    margin-right: 21px;
     margin-top: -20px;
 }
 .counter-warp button{
   float: left
 }
 .single-cart{
-  margin: 10px;
-  box-shadow: 6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  padding: 10px;
+  padding: 13px;
+  background: white;
+  margin-top: 12px;
+
 }
 /* 顶部bar */
 .top-bar{

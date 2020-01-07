@@ -92,9 +92,7 @@
     <div>
       <!-- 商品介绍栏目的内容 -->
       <div :hidden="activeIndex != 0">
-        <div v-for="img in topSwipers" :key="img.id">
-          <img :src="img.outterImage" style="width: 100%"/>
-        </div>
+        <img mode='widthFix' src="https://xiheo2o.oss-cn-hangzhou.aliyuncs.com/detail.jpg" style="width: 100%" />
       </div>
       <!-- 商品规格栏目的内容 -->
       <div :hidden="activeIndex != 1">
@@ -303,6 +301,7 @@ export default {
       store.commit('decrement')
     },
     tabClick (e) {
+      console.log(e.currentTarget.id)
       this.activeIndex = e.currentTarget.id
     },
     item_click () {
@@ -310,17 +309,17 @@ export default {
     }
   },
   computed: {
-    navbarSliderClass () {
-      if (this.activeIndex === 0) {
-        return 'navbar_slider_0'
-      }
-      if (this.activeIndex === 1) {
-        return 'navbar_slider_1'
-      }
-      if (this.activeIndex === 2) {
-        return 'navbar_slider_2'
-      }
-    },
+    // navbarSliderClass () {
+    //   if (this.activeIndex === 0) {
+    //     return 'navbar_slider_0'
+    //   }
+    //   if (this.activeIndex === 1) {
+    //     return 'navbar_slider_1'
+    //   }
+    //   if (this.activeIndex === 2) {
+    //     return 'navbar_slider_2'
+    //   }
+    // },
     count () {
       return store.state.count
     }

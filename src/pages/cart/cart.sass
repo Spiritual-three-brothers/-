@@ -1,0 +1,154 @@
+.page-wrapper
+  .selector
+    width: 18px
+    height: 18px
+    border-radius: 50%
+    border: 2px solid rgb(187,187,187)
+  .cart-area
+    position: absolute
+    top: 0
+    bottom: 50px
+    width: 100%
+    overflow-y: auto
+    background: rgb(247,247,247)
+    .shop-item
+      &:last-of-type
+        border-top: 1px solid rgb(247,247,247)
+      &:first-of-type
+        border: 0
+
+    .shop
+      margin-top: 12px
+      background: rgb(255,255,255)
+
+      .shop-title-bar
+        display: flex
+        height: 30px
+        line-height: 30px
+        padding: 8px
+        align-items: center
+        .shop-title
+          font-size: 13px
+          font-weight: bold
+          margin-left: 8px
+        .enter-shop
+          margin-left: 2px
+          color: rgb(169,169,169)
+      .item-bar
+        display: flex
+        height: 115px
+        padding: 8px
+        .selector-wrapper
+          display: flex
+          flex: 0 0 22px
+          align-items: center
+          height: 105px
+          text-align: center
+        .item-content
+          flex: 1
+          display: flex
+          .item-image-wrapper
+            flex: 0 0 105px
+            height: 105px
+            padding-left: 8px
+            img
+              height: 100%
+              width: 100%
+          .item-info-wrapper
+            position: relative
+            padding: 0 16px
+            flex: 1
+            height: 105px
+            display: flex
+            flex-direction: column
+            .quantity-controller
+              position: absolute
+              bottom: 20px
+              right: 16px
+              width: 80px
+              height: 20px
+              display: flex
+              text-align: center
+              line-height: 20px
+              .deduct
+                flex: 0 0 20px
+                line-height: 20px
+                background-color: rgb(249,249,249)
+                display: flex
+                justify-content: center
+                align-items: center
+                .line
+                  width: 75%
+                  height: 2px
+                  background-color: rgb(218,218,218)
+
+              .quantity
+                flex: 1
+                background-color: rgb(242,242,242)
+                font-size: 12px
+
+              .add
+                flex: 0 0 20px
+                font-size: 20px
+                margin-left: 1px
+                background-color: rgb(242,242,242)
+                color: rgb(112,112,112)
+
+            .item-desc
+              flex: 1
+              .text
+                font-size: 13px
+                display: -webkit-box
+                -webkit-box-orient: vertical
+                -webkit-line-clamp: 2
+                overflow: hidden
+                color: rgb(16,16,16)
+
+            .item-price
+              padding-top: 10px
+              flex: 1
+              color: rgb(251,77,83)
+              font-weight: bold
+              font-size: 17px
+
+  .bottom-bar
+    padding: 0 8px
+    box-sizing: border-box
+    position: fixed
+    height: 50px
+    width: 100%
+    display: flex
+    align-items: center
+    background: rgb(255,255,255)
+    bottom: 0
+    text-align: center
+    .money
+      display: flex
+      align-items: center
+      position: absolute
+      right: 140px
+      font-size: 13px
+      span
+        color: rgb(255,67,60)
+        font-weight: bold
+
+    .checkout
+      background-color: rgb(255,67,60)
+      color: white
+      position: absolute
+      right: 0
+      height: 100%
+      width: 120px
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 13px
+      span
+        vertical-align: middle
+        &:last-of-type
+          font-size: 10px
+          margin-top: 2px
+
+    .select-all-wrapper
+      font-size: 11px
+      color: rgb(166,166,164)

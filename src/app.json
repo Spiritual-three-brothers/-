@@ -31,37 +31,10 @@
       "iconPath": "static/tabs/cart-active.png",
       "selectedIconPath": "static/tabs/cart-active.png"
     },{
-      "text": "订单",
-      "pagePath": "pages/cart/main",
-      "iconPath": "static/tabs/order.png",
-      "selectedIconPath": "static/tabs/order_active.png"
-    }, {
       "text": "我的",
       "pagePath": "pages/mine/main",
       "iconPath": "static/tabs/mine.png",
       "selectedIconPath": "static/tabs/mine_active.png"
-    }],
-
-    "items": [{
-      "name": "首页",
-      "pagePath": "pages/index/main",
-      "icon": "static/tabs/home.png",
-      "activeIcon": "static/tabs/home-active.png"
-    }, {
-      "name": "购物车",
-      "pagePath": "pages/cart/main",
-      "iconPath": "static/tabs/cart.png",
-      "selectedIconPath": "static/tabs/cart_active.png"
-    },{
-      "name": "订单",
-      "pagePath": "pages/detail/main",
-      "icon": "static/tabs/orders-active.png",
-      "activeIcon": "static/tabs/orders-active.png"
-    }, {
-      "name": "订单",
-      "pagePath": "pages/mine/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
     }],
     "position": "bottom"
   }

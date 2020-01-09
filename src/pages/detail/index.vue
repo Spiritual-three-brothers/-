@@ -163,7 +163,7 @@
         <img class="displayImg" :src='curritem.item_display_images' />
         <div class="price">￥{{curritem.price}}</div>
         <div class="haveChosen">已选 {{curritem.weight}} {{setTitle}} {{count}}份</div>
-        <div class="closeBar" @click="triggerTransition1">×</div>
+        <div class="closeBar" @click="triggerTransition1">✕</div>
       </div>
       <div class="onBarMid">
         <div class="minialert">产品类型</div>
@@ -186,14 +186,24 @@
     </div>
     <!-- 弹出式优惠选项菜单 -->
     <div class="shoppingBar"  :class="extraClasses">
-      <div style="display:flex;background:lightgray;height:34px">
+      <div style="display:flex;background:#ececec;height:34px">
         <div class="off-text"> 优惠</div>
-        <div @click="triggerTransition" class="closeBar" style="flex:1;margin:-10px 0 0 0;">×</div>
+        <div @click="triggerTransition" class="closeBar" style="flex:1;margin:2px -15px 0px 0;">✕</div>
       </div>
       <div >
-        <div v-for='item in curritem.sale' style="display: flex;margin: 10px;height:70px; border-radius: 10px;border-bottom: solid 5px rgba(251, 77, 83, 1);box-shadow:6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);" :key="item.id">
-          <div style="flex:3;line-height:70px;font-size:35px;margin-left:21px;color:rgba(251, 77, 83, 1);">{{item.sale}}</div>
-          <div style="flex:7;">{{item.title}}</div>
+        <div v-for='item in curritem.sale' style="margin: 10px;height:110px; background-color:white" :key="item.id">
+          <div style="display:flex;background: linear-gradient(#FB4D53, #ec5d5d);height: 80px;">
+            <div style="flex: 3;line-height: 48px;font-size: 48px;margin-left: 17px;color: #ffe8e8;border-style: none dotted none none;height: 50px;margin-top: 14px;">{{item.sale}}<div style="font-size: 17px;float: right;margin-right: 20px;margin-top: 11px;font-weight:600">元</div></div>
+            <div style="flex:7;padding: 10px 10px 0px 10px;color:white;">{{item.title}}</div>
+          </div>
+           <div>
+             <div style="float: left;color: dimgray;font-size: 13px;line-height: 28px;margin-left: 15px;">【{{curritem.shopName}}】</div>
+             <div style="float: right;border: solid 1px green;border-radius: 15px;font-size: 12px;padding: 1px 6px 1px 6px;margin-top: 4px;margin-right: 19px;color: green;">立即领取</div>
+           </div>
+           <div>
+             <div style="width:14px;height: 14px;border-radius: 20px;background-color: #F0F0F0;margin-top: -7px;margin-left: -6px;"></div>
+             <div style="width:14px;height: 14px;border-radius: 20px;background-color: #F0F0F0;float:right;margin-right: -88px;margin-top: -13px;"></div>
+           </div>
         </div>
       </div>
     </div>
@@ -232,8 +242,8 @@ export default {
           {id: 0, title: '欧诗漫瓶装'},
           {id: 1, title: '欧诗漫简装'}
         ],
-        sale: [{id: 10201, title: '购买任意超100元产品,所有商品折扣8%', sale: '8%'},
-          {id: 10201, title: '购买超1000元的商品,总价格折扣50元', sale: '-20'}
+        sale: [{id: 10201, title: '单品超级抵价', sale: '10'},
+          {id: 10201, title: '购买超1000元的商品,总价格折扣50元', sale: '18'}
         ],
         item_display_images: '../../static/item/osm.jpg'
       },

@@ -1,0 +1,31 @@
+{
+  "cart": {
+    "shops": [{
+      "id": 1,
+      "shopTitle": "东百好果汁伟哥旗舰店",
+      "items": [{
+        "id": 1,
+        "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮",
+        "price": "38.9",
+        "count": 1,
+        "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg"
+      }, {
+        "id": 2,
+        "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮",
+        "price": "38.9",
+        "count": 1,
+        "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg"
+      }]
+    }, {
+      "id": 2,
+      "shopTitle": "周哥大保健产品旗舰店",
+      "items": [{
+        "id": 2,
+        "itemDesc": "周哥大保健牙膏 有效提高能力 谁用谁知道 每天刷牙 猛男不是梦",
+        "price": "22.2",
+        "count": 1,
+        "pic": "http://img4.99114.com/group10/M00/3E/F2/rBADs1n-AyeATXaVAAIZup48AzE038.jpg"
+      }]
+    }]
+  }
+}

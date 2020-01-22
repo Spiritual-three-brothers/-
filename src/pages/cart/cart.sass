@@ -4,6 +4,10 @@
     height: 18px
     border-radius: 50%
     border: 2px solid rgb(187,187,187)
+    text-align: center
+    line-height: 18px
+    font-size: 9px
+    color: white
   .cart-area
     position: absolute
     top: 0
@@ -11,12 +15,6 @@
     width: 100%
     overflow-y: auto
     background: rgb(247,247,247)
-    .shop-item
-      &:last-of-type
-        border-top: 1px solid rgb(247,247,247)
-      &:first-of-type
-        border: 0
-
     .shop
       margin-top: 12px
       background: rgb(255,255,255)
@@ -27,6 +25,10 @@
         line-height: 30px
         padding: 8px
         align-items: center
+        .checked
+          background-color: rgb(255,67,60)
+          border-color: rgb(255,67,60)
+          color: white
         .shop-title
           font-size: 13px
           font-weight: bold
@@ -38,6 +40,16 @@
         display: flex
         height: 115px
         padding: 8px
+        border-bottom: 1px solid rgb(247,247,247)
+        &:last-of-type
+          border: 0
+        .checked
+          background-color: rgb(255,67,60)
+          border-color: rgb(255,67,60)
+          color: white
+        .selector:not(.checked)
+          border: 2px solid rgb(187,187,187)
+          color: white
         .selector-wrapper
           display: flex
           flex: 0 0 22px
@@ -81,7 +93,11 @@
                   width: 75%
                   height: 2px
                   background-color: rgb(218,218,218)
-
+                &.overLimit
+                  color: #707070
+                  background-color: #f2f2f2
+                  .line
+                    background-color: #707070
               .quantity
                 flex: 1
                 background-color: rgb(242,242,242)
@@ -152,3 +168,7 @@
     .select-all-wrapper
       font-size: 11px
       color: rgb(166,166,164)
+    .checked
+      background-color: rgb(255,67,60)
+      border-color: rgb(255,67,60)
+      color: white

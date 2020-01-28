@@ -1,4 +1,4 @@
-.item-list 
+.item-list
     background-color: rgb(247, 247, 247)
 
 .top
@@ -8,13 +8,20 @@
     white-space: nowrap
     position: relative
     background: #fff
-
-.tabbar
-    width: 180rpx
+.tab-bar-container
+  text-align: left
+  border-bottom: 1px solid #F2f1f1
+  .tabbar
     font-size: 14px
-    height: 79rpx
+    margin: 0 15px
     display: inline-block
-    color: #000
+
+//.tabbar
+//    width: 180rpx
+//    font-size: 14px
+//    height: 79rpx
+//    display: flex
+
 
 .tabbar-bottom
     color: #FB4D53
@@ -22,34 +29,28 @@
     font-weight: bold
 
 .sub-category
-    display: flex
-    padding: 15px 5px 15px 5px
-
+  text-align: left
 .sub-category-item
+    display: inline-block
     text-align: center
     font-size: 12px
-    flex: 1
-    border-radius: 15px
-    margin: 0 8px
+    width: 60px
+    border-radius: 10px
+    margin: 0 6px
     color: #626261
     height: 20px
     line-height: 20px
+    background-color: #f9f7f7
 
 .sub-category-item.selected
     color: #FB4D53
     border: 1px solid #FB4D53
+    background-color: white
 
 .item-content
     display: flex
     flex-wrap: wrap
-    .item-container:nth-child(0)
-      margin-top: 1%
-    .item-container:nth-child(1)
-      margin-top: 1%
-    .item-container:nth-of-type(even)
-      margin-left: 1%
-    .item-container:nth-of-type(odd)
-      margin-right: 0.5%
+
     .item-container
       height: 300px
       border-radius: 0
@@ -57,11 +58,22 @@
       color: #101010
       font-size: 14px
       text-align: center
-      flex: 0 0 48%
+      flex: 0 0 50%
       display: flex
       flex-direction: column
       box-sizing: border-box
-      margin: 1%
+      padding: 12px
+      border: 1px solid rgb(242,241,241)
+      border-bottom: 0
+      &:nth-last-child(2)
+        border-bottom: 1px solid rgb(242,241,241)
+      &:nth-last-child(1)
+        border-bottom: 1px solid rgb(242,241,241)
+      &:nth-child(odd)
+        border-left: 0
+      &:nth-child(even)
+        border-right: 0
+        border-left: 0
       .image-container
         flex: 1
       .item-title
@@ -77,9 +89,9 @@
         -webkit-line-clamp: 2
         white-space: normal
         overflow: hidden
-        padding: 0 5px
+
       .item-price
-        padding-left: 5px
+
         padding-top: 5px
         flex: 0 0 20px
         line-height: 20px
@@ -90,10 +102,10 @@
         font-weight: bold
       .item-tag
         flex: 0 0 14px
-        padding-left: 5px
+
       .item-comment
         flex: 0 0 18px
-        padding-left: 5px
+
         height: 18px
         line-height: 18px
         color: rgb(168, 162, 162)
@@ -102,15 +114,15 @@
         font-family: SourceHanSansSC-regular
       .item-shop
         flex: 0 0 18px
-        padding-left: 5px
+
         line-height: 9px
         text-align: left
-      .image-container 
+      .image-container
         image
           width: 100%
           height: 100%
 
-.item-shop 
+.item-shop
     .shop-name
       height: 18px
       color: rgb(168, 162, 162)
@@ -129,8 +141,8 @@
       padding: 5px
       line-height: 2px
 
-.item-tag 
-    span:first-child 
+.item-tag
+    span:first-child
       float: left
       background-color: #fb4d53
       color: white

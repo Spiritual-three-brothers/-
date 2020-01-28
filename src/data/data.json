@@ -1,31 +1,68 @@
 {
   "cart": {
-    "shops": [{
-      "id": 1,
-      "shopTitle": "东百好果汁伟哥旗舰店",
-      "items": [{
+    "shops": [
+      {
         "id": 1,
-        "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮",
-        "price": "38.9",
-        "count": 1,
-        "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg"
-      }, {
+        "shopTitle": "东百好果汁伟哥旗舰店",
+        "items": [
+          {
+            "id": 1,
+            "shopId": 1,
+            "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮",
+            "price": "38.9",
+            "count": 1,
+            "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg"
+          },
+          {
+            "id": 2,
+            "shopId": 1,
+            "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮",
+            "price": "38.9",
+            "count": 1,
+            "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg"
+          }
+        ]
+      },
+      {
         "id": 2,
-        "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮",
-        "price": "38.9",
+        "shopTitle": "周哥大保健产品旗舰店",
+        "items": [
+          {
+            "id": 2,
+            "shopId": 2,
+            "itemDesc": "周哥大保健牙膏 有效提高能力 谁用谁知道 每天刷牙 猛男不是梦",
+            "price": "22.2",
+            "count": 1,
+            "pic": "http://img4.99114.com/group10/M00/3E/F2/rBADs1n-AyeATXaVAAIZup48AzE038.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "order": {
+    "procedure": [
+      "全部",
+      "待付款",
+      "待收货",
+      "待评价"
+    ],
+    "orderInfos": [
+      {
+        "id": 1,
+        "shopTitle": "伟哥好果汁旗舰店",
+        "status": "已签收",
         "count": 1,
-        "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg"
-      }]
-    }, {
-      "id": 2,
-      "shopTitle": "周哥大保健产品旗舰店",
-      "items": [{
+        "money": 38.9,
+        "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮"
+      },
+      {
         "id": 2,
-        "itemDesc": "周哥大保健牙膏 有效提高能力 谁用谁知道 每天刷牙 猛男不是梦",
-        "price": "22.2",
+        "shopTitle": "周哥伟哥旗舰店",
+        "status": "已签收",
         "count": 1,
-        "pic": "http://img4.99114.com/group10/M00/3E/F2/rBADs1n-AyeATXaVAAIZup48AzE038.jpg"
-      }]
-    }]
+        "money": 66.6,
+        "itemDesc": "周哥大伟哥 永不凋谢 持续坚挺 谁用谁知道"
+      }
+    ]
   }
 }

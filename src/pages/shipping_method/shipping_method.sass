@@ -1,8 +1,42 @@
 $shippingOptionHeight: 80px
-$shippingOptionPadding: 10px
+$shippingPageMargin: 10px
+
+$selectedColor: #FB4D53
+
 page
   background-color: #f7f7f7
-.shipping-option
-  height: $shippingOptionHeight
-  padding: $shippingOptionPadding
-  background-color: white
+.shipping-method
+  .shipping-option-wrapper
+    height: $shippingOptionHeight
+    padding: $shippingPageMargin
+    background-color: white
+    position: relative
+    box-shadow: 0 0 20px #b9b9b9
+    .d4
+      bottom: 0
+      transition: all .4s ease-in-out
+      &.seller
+        left: 40px
+      &.self
+        left: 130px
+    .text
+      font-size: 13px
+      margin-left: 6px
+    .shipping-option
+      font-size: 13px
+      display: flex
+      padding-top: 13px
+      .choice
+        width: 80px
+        height: 30px
+        margin-right: 8px
+        line-height: 30px
+        border-radius: 2px
+        text-align: center
+        border: 1px solid rgba(166, 164, 164, 1)
+        &.selected
+          color: $selectedColor
+          border: 1px solid $selectedColor
+
+  .test
+    height: 120px

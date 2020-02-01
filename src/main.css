@@ -67,3 +67,13 @@ li{
 input,img{
   border: none;
 }
+
+.d4{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #f7f7f7 transparent transparent;
+  transform: rotate(90deg);
+}

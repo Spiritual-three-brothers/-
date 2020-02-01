@@ -87,7 +87,7 @@
       <div class="actual-pay">
         实付金额：<span class="money">￥43.9</span>
       </div>
-      <div class="pay-btn">立即支付</div>
+      <div class="pay-btn" @click="navigate2checkout">立即支付</div>
     </div>
   </div>
 </template>
@@ -109,6 +109,9 @@
       navigate2ShippingOption () {
         console.log(123)
         wx.navigateTo({url: '../shipping_method/main'})
+      },
+      navigate2checkout () {
+        wx.navigateTo({url: '../order_checkout/main'})
       }
     }
   }

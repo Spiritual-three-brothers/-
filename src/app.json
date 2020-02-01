@@ -8,7 +8,9 @@
     "pages/detail/main",
     "pages/cart/main",
     "pages/order/main",
-    "pages/order_confirm/main"
+    "pages/order_confirm/main",
+    "pages/shipping_method/main",
+    "pages/order_checkout/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

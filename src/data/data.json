@@ -64,5 +64,41 @@
         "itemDesc": "周哥大伟哥 永不凋谢 持续坚挺 谁用谁知道"
       }
     ]
+  },
+
+  "orderConfirm": {
+    "shops": [{
+      "id": 1,
+      "shopTitle": "伟哥好果汁旗舰店",
+      "comment": "",
+      "items": [
+        {
+          "id": 1,
+          "itemDesc": "周哥大保健牙膏 有效提高能力 谁用谁知道 每天刷牙 猛男不是梦",
+          "price": "22.2",
+          "count": 1,
+          "pic": "http://img4.99114.com/group10/M00/3E/F2/rBADs1n-AyeATXaVAAIZup48AzE038.jpg"
+        },
+        {
+          "id": 2,
+          "itemDesc": "金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮金盆洗脚城会员黑金卡走过路过不要错过一次就高潮",
+          "price": "38.9",
+          "count": 1,
+          "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg"
+        }
+      ]
+    }, {
+      "id": 2,
+      "shopTitle": "魏哥手改造数据旗舰店",
+      "comment": "",
+      "items": [
+        {
+          "id": 1,
+          "pic": "http://picapi.zhituad.com/photo/35/18/44ABE.jpg",
+          "itemDesc": "MC手改装备 黑龙MM手改装备 BWL手改装备预定 毁灭碧空短暂能量护符极品",
+          "price": "66.9"
+        }
+      ]
+    }]
   }
 }

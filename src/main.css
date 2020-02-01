@@ -1,4 +1,6 @@
-@font-face {font-family: 'iconfont';
+@import "../static/font/iconfont.css";
+@font-face {
+  font-family: 'iconfont';
   src: url('../static/font/iconfont.eot');
   src: url('../static/font/iconfont.eot?#iefix') format('embedded-opentype'),
   url('../static/font/iconfont.woff') format('woff'),

@@ -1,0 +1,191 @@
+$addressWrapperHeight: 50px
+$addressWrapperPadding: 10px
+$addressFontSize: 13px
+$addressLineHeight: 22px
+$regularPadding: 8px
+$regularMargin: 6px
+$marginBottom: 20px
+$border: .5px solid rgba(187, 187, 187, 0.16)
+
+$shopTitleFontSize: 13px
+$shopTitleHeight: 40px
+
+$itemContentPadding: 10px 0 10px 0
+$itemContentMargin: 0 10px
+
+$selectedColor: #FB4D53
+page
+  background-color: #f7f7f7
+.order_confirm
+  .arrow
+    position: absolute
+    right: 5px
+    top: 35%
+  .address-wrapper
+    position: relative
+    height: $addressWrapperHeight
+    padding: $addressWrapperPadding
+    font-size: $addressFontSize
+    line-height: $addressLineHeight
+    .user-info
+      display: flex
+      font-weight: bold
+      .name
+        flex: 0 0 50px
+      .phone
+        flex: 1
+        text-align: left
+  .confirm-item
+    background-color: white
+    margin-bottom: $marginBottom
+    .shop-title-wrapper
+      display: flex
+      align-items: center
+      position: relative
+      height: $shopTitleHeight
+      border-bottom: $border
+      padding-left: $regularPadding + 2
+      .shop-title
+        font-size: $shopTitleFontSize
+        font-weight: bold
+        margin-left: $regularMargin
+    .item-content
+      flex: 1
+      display: flex
+      padding: $itemContentPadding
+      margin: $itemContentMargin
+      border-bottom: $border
+      .item-image-wrapper
+        flex: 0 0 105px
+        height: 105px
+        img
+          height: 100%
+          width: 100%
+      .item-info-wrapper
+        position: relative
+        padding: 0 16px
+        flex: 1
+        height: 105px
+        display: flex
+        flex-direction: column
+      .item-desc
+        flex: 1
+        .text
+          font-size: 13px
+          font-weight: bold
+          display: -webkit-box
+          -webkit-box-orient: vertical
+          -webkit-line-clamp: 2
+          overflow: hidden
+          color: rgb(16,16,16)
+      .item-price
+        padding-top: 10px
+        flex: 1
+        color: rgb(251,77,83)
+        font-weight: bold
+        font-size: 17px
+
+    .shipping-option
+      position: relative
+      display: flex
+      align-items: center
+      height: 50px
+      border-bottom: $border
+      margin: $itemContentMargin
+      .arrow
+        font-size: 12px
+        position: absolute
+        right: 0
+        color: rgba(151, 151, 151, 0.77)
+      .shipping-service
+        position: absolute
+        text-align: left
+        left: 0
+        font-size: 12px
+        line-height: 20px
+        .lower
+          color: rgba(151, 151, 151, 0.77)
+      .shipping-type
+        position: absolute
+        text-align: right
+        right: 18px
+        font-size: 12px
+        line-height: 20px
+        .lower
+          color: rgba(151, 151, 151, 0.77)
+
+    .order-comment
+      display: flex
+
+      box-sizing: border-box
+      font-size: 13px
+      align-items: center
+      height: 50px
+      margin: $itemContentMargin
+      .title
+        flex: 0 0 60px
+      .comment
+        flex: 1
+      .statistic
+        text-align: right
+        flex: 0 0 60px
+        color: rgba(151, 151, 151, 0.77)
+
+  .discount-info
+    background-color: white
+    margin-bottom: $marginBottom
+    > div
+      display: flex
+      font-size: 13px
+      align-items: center
+      height: 50px
+      margin: $itemContentMargin
+      border-bottom: $border
+      justify-content: space-between
+      .title
+        flex: 0 0 60px
+      .chosen
+        color: #606060
+      .nothing
+        color: rgba(151, 151, 151, 0.77)
+        font-size: 12px
+  .checkout-price
+    background-color: white
+    > div
+      display: flex
+      font-size: 13px
+      align-items: center
+      height: 25px
+      margin: $itemContentMargin
+      justify-content: space-between
+      .title
+        flex: 0 0 60px
+      .value
+        font-size: 12px
+        font-weight: bold
+        color: $selectedColor
+  .pay
+    background-color: white
+    border-top: $border
+    padding-bottom: 20px
+    margin-bottom: 50px
+    .actual-pay
+      display: flex
+      font-size: 15px
+      align-items: center
+      justify-content: flex-end
+      height: 60px
+      margin: $itemContentMargin
+      .money
+        font-size: 13px
+        color: $selectedColor
+        font-weight: bold
+    .pay-btn
+      height: 40px
+      background-color: $selectedColor
+      color: white
+      margin: $itemContentMargin
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 8px

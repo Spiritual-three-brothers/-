@@ -64,7 +64,7 @@
         总计：<span>￥{{totalPrice}}</span>
       </div>
 
-      <div class="checkout">
+      <div class="checkout" :class="{disabled: totalCount <= 0}" @click="checkout">
         <span>去结算</span><span>({{totalCount}})件</span>
       </div>
     </div>
@@ -78,7 +78,6 @@
     created () {
       const data = this.getCartData()
       this.shops = data.shops
-      console.log(data)
     },
     data () {
       return {
@@ -202,6 +201,9 @@
       },
       add (item) {
         item.count++
+      },
+      checkout () {
+        wx.navigateTo({url: '../order_confirm/main'})
       }
     }
   }

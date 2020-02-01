@@ -7,7 +7,8 @@
     "pages/classify/main",
     "pages/detail/main",
     "pages/cart/main",
-    "pages/order/main"
+    "pages/order/main",
+    "pages/order_confirm/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

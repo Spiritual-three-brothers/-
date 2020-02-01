@@ -166,7 +166,6 @@
         this.selectedSub = idx
       },
       navigate () {
-        console.log(123321)
         wx.navigateTo({url: '../detail/main'})
       }
     }

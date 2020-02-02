@@ -61,10 +61,7 @@
                 13万条评价
               </div>
               <div class="item-shop">
-                <span class="shop-name"> 欧诗漫自营官方旗舰店</span>
-                <!--                        <span class="enter-shop">-->
-                <!--                        >进店-->
-                <!--                      </span>-->
+                欧诗漫自营官方旗舰店
               </div>
             </div>
           </div>

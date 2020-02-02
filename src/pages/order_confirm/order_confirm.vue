@@ -8,7 +8,7 @@
       <div class="address">
         四川省成都市高新区泰和家园
       </div>
-      <div class="arrow">＞</div>
+      <span class="iconfont arrow">&#xe637;</span>
 
     </div>
 
@@ -43,7 +43,8 @@
           <div class="upper">快递运输</div>
           <div class="lower">工作日、休息日均可送货</div>
         </div>
-        <div class="arrow">＞</div>
+        <span class="iconfont arrow">&#xe637;</span>
+
       </div>
 
       <div class="order-comment">
@@ -64,11 +65,11 @@
       </div>
       <div class="membership">
         <div class="title">会员卡</div>
-        <div class="nothing">无可用 ＞</div>
+        <div class="nothing">无可用<span class="iconfont arrow">&#xe637;</span></div>
       </div>
       <div class="coupon">
         <div class="title">优惠券</div>
-        <div class="nothing">无可用 ＞</div>
+        <div class="nothing">无可用<span class="iconfont arrow">&#xe637;</span></div>
       </div>
     </div>
 

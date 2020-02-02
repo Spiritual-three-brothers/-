@@ -14,19 +14,26 @@ $itemContentPadding: 10px 0 10px 0
 $itemContentMargin: 0 10px
 
 $selectedColor: #FB4D53
+
+$fourteen: 14px
+$thirteen: 13px
+$twelve: 12px
+$ten: 10px
 page
   background-color: #f7f7f7
+.arrow
+  font-size: $ten
 .order_confirm
-  .arrow
-    position: absolute
-    right: 5px
-    top: 35%
   .address-wrapper
     position: relative
     height: $addressWrapperHeight
     padding: $addressWrapperPadding
     font-size: $addressFontSize
     line-height: $addressLineHeight
+    .arrow
+      position: absolute
+      right: 10px
+      top: 35%
     .user-info
       display: flex
       font-weight: bold
@@ -101,9 +108,10 @@ page
         position: absolute
         text-align: left
         left: 0
-        font-size: 12px
+        font-size: $thirteen
         line-height: 20px
         .lower
+          font-size: $ten
           color: rgba(151, 151, 151, 0.77)
       .shipping-type
         position: absolute
@@ -112,13 +120,14 @@ page
         font-size: 12px
         line-height: 20px
         .lower
+          font-size: $ten
           color: rgba(151, 151, 151, 0.77)
 
     .order-comment
       display: flex
 
       box-sizing: border-box
-      font-size: 13px
+      font-size: $thirteen
       align-items: center
       height: 50px
       margin: $itemContentMargin
@@ -127,6 +136,7 @@ page
       .comment
         flex: 1
       .statistic
+        font-size: $ten
         text-align: right
         flex: 0 0 60px
         color: rgba(151, 151, 151, 0.77)

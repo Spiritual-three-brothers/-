@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="buttons">
-        <div class="checkOrder">查看订单</div>
+        <div class="checkOrder" @click="switch2orderProcess">查看订单</div>
         <div class="Back2Menu" @click="back2menu">去首页</div>
       </div>
     </div>
@@ -37,6 +37,9 @@
     methods: {
       back2menu () {
         wx.switchTab({url: '../index/main'})
+      },
+      switch2orderProcess () {
+        wx.navigateTo({url: '../order_process/main'})
       }
     }
   }

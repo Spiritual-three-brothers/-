@@ -88,7 +88,7 @@
       <div class="actual-pay">
         实付金额：<span class="money">￥43.9</span>
       </div>
-      <div class="pay-btn" @click="navigate2checkout">立即支付</div>
+      <div class="pay-btn" @click="navigate2checkout">提交订单</div>
     </div>
   </div>
 </template>

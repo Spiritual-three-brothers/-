@@ -103,12 +103,14 @@
         shops: []
       }
     },
+    onLoad (options) {
+      console.log(options)
+    },
     created () {
       this.shops = getConfirmOrderInfo()
     },
     methods: {
       navigate2ShippingOption () {
-        console.log(123)
         wx.navigateTo({url: '../shipping_method/main'})
       },
       navigate2checkout () {

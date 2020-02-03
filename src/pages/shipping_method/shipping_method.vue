@@ -1,5 +1,6 @@
 <template>
   <div class="shipping-method">
+    <div class="mask" :animation="maskAnimation" :class="{enable: enableMask}"/>
     <div class="shipping-option-wrapper">
       <div class="shipping-option-banner">
         <span class="iconfont" style="color: #707070">&#xe659;</span>
@@ -51,9 +52,9 @@
 <!--          <img src="http://picapi.zhituad.com/photo/35/18/44ABE.jpg">-->
 <!--        </div>-->
       </div>
-      <div class="desc" :animation="animation" >
+      <div class="desc" :animation="animation" @click="chooseTime">
         <div class="option1" :animation="animation2">
-          <div class="timing">送货时间: 2020-01-30周四 </div>
+          <div class="timing">送货时间: {{timing}} </div>
           <span class="iconfont" style="position: absolute; top:0; color: #707070; right: 10px">&#xe62a;</span>
         </div>
 
@@ -64,6 +65,18 @@
       </div>
     </div>
 
+    <div class="choose-time" :animation="chooseTimeAnimation">
+      <div class="band">送货时间<span class="iconfont close" @click="closeMask">&#xe62b;</span></div>
+      <div class="date-wrapper">
+        <div class="date"
+             :class="{selected: date === timing}"
+             @click="chooseDate(date)"
+             v-for="(date, idx) in ['2020-01-31 周五', '2020-02-01 周六', '2020-02-02 周日', '2020-02-03 周一']">
+          {{date}}
+        </div>
+      </div>
+
+    </div>
 
 
     <div class="bottom-operate">
@@ -71,7 +84,7 @@
         配送费：<span>￥5.00</span>
       </div>
 
-      <div class="checkout">
+      <div class="checkout" @click="confirm">
         确认
       </div>
     </div>
@@ -86,7 +99,8 @@
     data () {
       return {
         selected: 1,
-        timing: '',
+        enableMask: false,
+        timing: '2020-01-31 周五',
         place: '',
         animation: wx.createAnimation({
           duration: 200, // 动画执行时间
@@ -98,6 +112,14 @@
         }),
         animation3: wx.createAnimation({
           duration: 200, // 动画执行时间
+          timingFunction: 'ease-in-out' // 动画执行效果
+        }),
+        maskAnimation: wx.createAnimation({
+          duration: 400, // 动画执行时间
+          timingFunction: 'ease-in-out' // 动画执行效果
+        }),
+        chooseTimeAnimation: wx.createAnimation({
+          duration: 400, // 动画执行时间
           timingFunction: 'ease-in-out' // 动画执行效果
         })
       }
@@ -130,6 +152,34 @@
           this.animation2.export()
           this.animation3.export()
         }, 30)
+      },
+      chooseTime () {
+        if (this.selected !== 1) {
+          return
+        }
+        this.enableMask = true
+        this.maskAnimation.opacity(0.62).step()
+        this.chooseTimeAnimation.height(280).step()
+        setTimeout(() => {
+          this.maskAnimation.export()
+          this.chooseTimeAnimation.export()
+        }, 20)
+      },
+      chooseDate (date) {
+        this.timing = date
+        this.closeMask()
+      },
+      closeMask () {
+        this.enableMask = false
+        this.maskAnimation.opacity(0).step()
+        this.chooseTimeAnimation.height(0).step()
+        setTimeout(() => {
+          this.maskAnimation.export()
+          this.chooseTimeAnimation.export()
+        }, 20)
+      },
+      confirm () {
+        wx.navigateBack({ changed: true })
       }
     }
   }

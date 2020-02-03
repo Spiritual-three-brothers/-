@@ -5,7 +5,7 @@
         <div class="shop-item">
           <div class="shop-title-bar">
             <div class="selector" :class="{'checked': shop.checked}" @click="checkShop(shop)">
-              √
+              <span class="iconfont check">&#xe65b;</span>
             </div>
             <i class="iconfont" style="margin-left: 8px;font-size: 22px;color: dimgray;">&#xe703;</i>
             <div class="shop-title">{{shop.shopTitle}}</div>
@@ -15,7 +15,7 @@
           <div class="item-bar" :key=item.id v-for="(item, idx) in shop.items">
             <div class="selector-wrapper">
               <div class="selector" @click="checkItem(item)" :class="{'checked': item.checked}">
-                √
+                <span class="iconfont check">&#xe65b;</span>
               </div>
             </div>
 
@@ -53,9 +53,9 @@
 
     </div>
     <div class="bottom-bar">
-      <div class="select-all-wrapper">
-        <div class="selector" :class="{checked: checkedAll}" @click="checkAll()">
-          √
+      <div class="select-all-wrapper" @click="checkAll()">
+        <div class="selector" :class="{checked: checkedAll}" >
+          <span class="iconfont check">&#xe65b;</span>
         </div>
         <span>全选</span>
       </div>

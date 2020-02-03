@@ -10,7 +10,8 @@
     "pages/order/main",
     "pages/order_confirm/main",
     "pages/shipping_method/main",
-    "pages/order_checkout/main"
+    "pages/order_checkout/main",
+    "pages/order_process/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

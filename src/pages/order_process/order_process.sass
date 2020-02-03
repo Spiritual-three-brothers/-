@@ -1,0 +1,68 @@
+$itemPadding: 10px 11px 10px 11px
+$selectedColor: #FB4D53
+$buttonBorder: 1px solid gray
+$buttonBorderSelect: 1px solid #FB4D53
+$itemspace: 0 11px 0 11px
+
+page
+  background-color: #f7f7f7
+  font-size: 15px
+  line-height: 24px
+  .this_container
+    .order_state
+      padding: $itemPadding
+      background: white
+      .infos
+        display: flex
+        .order_info
+          flex: 1
+          color: lightgray
+        .state
+          color: red
+          flex: 4
+        .number
+          color: dimgray
+          flex: 4
+    .order_process
+      margin-top: 10px
+      background: white
+      padding: 0 0 20px 0
+      .title_bar
+        margin: $itemspace
+        line-height: 40px
+        color: gray
+        border-bottom: 1px solid lightgray
+      .process_container
+        margin-top: 18px
+        color: gray
+        .detail_container
+          display: flex
+          .pointer
+            flex: 1
+            color: $selectedColor
+            font-size: 25px
+            line-height: 25px
+            text-align: center
+          .process_detail
+            flex: 7
+            line-height: 18px
+            padding: $itemspace
+          .unpointer
+            flex: 1
+            color: gray
+            font-size: 25px
+            text-align: center
+          .place
+            flex: 1
+          .date_detail
+            flex: 7
+            padding: $itemspace
+
+        
+
+
+
+
+
+
+          

@@ -166,7 +166,7 @@
         <div class="closeBar" @click="triggerTransition1">✕</div>
       </div>
       <div class="onBarMid">
-        <div class="minialert">产品类型</div>
+        <div class="minialert">类别</div>
         <div class="singleTypes" @click="changeBGC($event, index)" :class="{divBGC:setBGC == index}" v-for="(item, index) in curritem.types" :key="item.id">
             {{item.title}}
         </div>
@@ -186,12 +186,12 @@
     </div>
     <!-- 弹出式优惠选项菜单 -->
     <div class="shoppingBar"  :class="extraClasses">
-      <div style="display:flex;background:#ececec;height:34px">
+      <div style="display:flex;background:#f4f2f8;height:35px">
         <div class="off-text"> 优惠</div>
-        <div @click="triggerTransition" class="closeBar" style="flex:1;margin:2px -15px 0px 0;">✕</div>
+        <div @click="triggerTransition" class="closeBar iconfont" style="flex:1;margin:0 -17px 0 0;">&#xe62b;</div>
       </div>
       <div >
-        <div v-for='item in curritem.sale' style="margin: 10px;height:110px; background-color:white" :key="item.id">
+        <div v-for='item in curritem.sale' style="margin: 10px;height:110px; background-color:#F0F0F0" :key="item.id">
           <div style="display:flex;background: linear-gradient(#FB4D53, #ec5d5d);height: 80px;">
             <div style="flex: 3;line-height: 48px;font-size: 48px;margin-left: 17px;color: #ffe8e8;border-style: none dotted none none;height: 50px;margin-top: 14px;">{{item.sale}}<div style="font-size: 17px;float: right;margin-right: 20px;margin-top: 11px;font-weight:600">元</div></div>
             <div style="flex:7;padding: 10px 10px 0px 10px;color:white;">{{item.title}}</div>
@@ -201,8 +201,8 @@
              <div style="float: right;border: solid 1px green;border-radius: 15px;font-size: 12px;padding: 1px 6px 1px 6px;margin-top: 4px;margin-right: 19px;color: green;">立即领取</div>
            </div>
            <div>
-             <div style="width:14px;height: 14px;border-radius: 20px;background-color: #F0F0F0;margin-top: -7px;margin-left: -6px;"></div>
-             <div style="width:14px;height: 14px;border-radius: 20px;background-color: #F0F0F0;float:right;margin-right: -88px;margin-top: -13px;"></div>
+             <div style="width:14px;height: 14px;border-radius: 20px;background-color: white;margin-top: -7px;margin-left: -6px;"></div>
+             <div style="width:14px;height: 14px;border-radius: 20px;background-color: white;float:right;margin-right: -88px;margin-top: -13px;"></div>
            </div>
         </div>
       </div>

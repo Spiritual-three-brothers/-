@@ -11,7 +11,8 @@
     "pages/order_confirm/main",
     "pages/shipping_method/main",
     "pages/order_checkout/main",
-    "pages/order_process/main"
+    "pages/order_process/main",
+    "pages/unpaid/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

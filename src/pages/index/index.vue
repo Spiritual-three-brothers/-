@@ -49,6 +49,8 @@
             </li>
           </ul>
         </div>
+        <!-- 测试页面入口 -->
+        <div @click="test_enter" style="text-align:center">测试入口</div>
         <!-- 促销页面 -->
         <div class="saling">
           营销活动区
@@ -162,6 +164,9 @@
       clickHandle (ev) {
         console.log('clickHandle:', ev)
         // throw {message: 'custom test'}
+      },
+      test_enter () {
+        wx.navigateTo({url: '../unpaid/main'})
       }
     },
 

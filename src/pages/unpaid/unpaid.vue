@@ -38,7 +38,43 @@
       <div class="connect_service">&#xe610; 联系客服</div>
     </div>
     <div class="order_info">
-      <div></div>
+      <div class="order_detail">
+        <div class="single_container">
+          <div class="type">订单编号:</div><div class='content'>1145141919</div>
+        </div>
+        <div class="single_container">
+          <div class="type">下单时间:</div><div class='content'>2020-02-08 14:30:26</div>
+        </div>
+        <div class="single_container">
+          <div class="type">支付方式:</div><div class='content'>在线支付</div>
+        </div>
+        <div class="single_container">
+          <div class="type">供货商家:</div><div class='content'>东百好果汁伟哥生鲜贸易公司</div>
+        </div>
+        <div class="single_container">
+          <div class="type">配送方式:</div><div class='content'>商家配送</div>
+        </div>
+        <div class="invoice">
+          <div class="type">纸质发票:</div><div class='content'>将由商家开具发票</div>
+        </div>
+      </div>
+       <div class="settlement_amount">
+        <div class="settlement_container">
+          <div class="type">商品金额</div><div class="cost">￥29.00</div>
+        </div>
+        <div class="settlement_container">
+          <div class="type">运费</div><div class="cost">+￥5.00</div>
+        </div>
+        <div class="total">
+          <div class="cost">￥34.00</div><div class="type">应付金额：</div>
+        </div>
+      </div>
+      <div class="bottom_area">
+        <div class="btm_pay">去支付</div>
+        <div class="re_order">重新下单</div>
+        <div class="change_address">修改地址</div>
+        <div class="cancel_order">取消订单</div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +84,6 @@
   export default {
     data () {
       return {
-        shops: []
       }
     },
     created () {

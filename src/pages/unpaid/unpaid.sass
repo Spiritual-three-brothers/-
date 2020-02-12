@@ -1,4 +1,4 @@
-$itemPadding: 0 11px 0 11px
+$itemPadding: 0 13px 0 11px
 $selectedColor: #FB4D53
 $buttonBorder: 1px solid gray
 $buttonBorderSelect: 1px solid #FB4D53
@@ -130,8 +130,108 @@ page
         color: #999999
         border-top: solid 1px #e7e7e7
         text-align: center
-        margin-left: -10px
+        text-indent: -15px
         width: 100%
         line-height: 46px
     .order_info
-      
+      margin-top: 10px
+      height: 320px
+      width: 100%
+      background: white
+      .order_detail
+        padding: 0 0 0 13px
+        .single_container
+          display: flex
+          font-size: 12px
+          padding: 7px 0 0 0
+          .type
+            flex: 1
+            color: #999999
+          .content
+            flex: 5
+        .invoice
+          display: flex
+          border-bottom: solid 1px #e7e7e7
+          border-top: solid 1px #e7e7e7
+          padding: 5px 0 5px 0
+          font-size: 12px
+          margin-top: 9px
+          .type
+            flex: 1
+            color: #999999
+          .content
+            flex: 5
+      .settlement_amount
+        padding: 0 13px 0 13px
+        .settlement_container
+          display: flex
+          padding: 4px 0 0 0
+          font-size: 12px
+          .type
+            flex: 1 
+          .cost
+            flex: 5
+            text-align: right
+            font-weight: bold
+        .total
+          font-size: 13px
+          font-weight: bold
+          .type
+            float: right
+          .cost
+            float: right
+            color: $selectedColor
+      .bottom_area
+        float: right
+        padding: 0 4px 13px 4px
+        border-top: solid 1px #e7e7e7
+        width: 100%
+        .btm_pay
+          border-radius: 5px
+          width: 70px
+          height: 24px
+          text-align: center
+          line-height: 24px
+          background-color: #F44B51
+          border: solid 1px $selectedColor
+          color: white
+          font-size: 12px
+          float: right
+          margin-top: 5px
+          margin-right: 9px
+        .re_order
+          border-radius: 5px
+          width: 70px
+          height: 24px
+          text-align: center
+          line-height: 24px
+          border: solid 1px $selectedColor
+          color: $selectedColor
+          font-size: 12px
+          float: right
+          margin-top: 5px
+          margin-right: 9px
+        .change_address
+          border-radius: 5px
+          width: 70px
+          height: 24px
+          text-align: center
+          line-height: 24px
+          border: solid 1px #BBBBBB
+          color: #BBBBBB
+          font-size: 12px
+          float: right
+          margin-top: 5px
+          margin-right: 9px
+        .cancel_order
+          border-radius: 5px
+          width: 70px
+          height: 24px
+          text-align: center
+          line-height: 24px
+          border: solid 1px #BBBBBB
+          color: #BBBBBB
+          font-size: 12px
+          float: right
+          margin-top: 5px
+          margin-right: 9px

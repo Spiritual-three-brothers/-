@@ -51,6 +51,7 @@
         </div>
         <!-- 测试页面入口 -->
         <div @click="test_enter" style="text-align:center">测试入口</div>
+        <div @click="test_enter2" style="text-align:center">测试入口2</div>
         <!-- 促销页面 -->
         <div class="saling">
           营销活动区
@@ -167,6 +168,9 @@
       },
       test_enter () {
         wx.navigateTo({url: '../unpaid/main'})
+      },
+      test_enter2 () {
+        wx.navigateTo({url: '../evaluation/main'})
       }
     },
 

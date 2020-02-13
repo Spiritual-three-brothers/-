@@ -12,7 +12,8 @@
     "pages/shipping_method/main",
     "pages/order_checkout/main",
     "pages/order_process/main",
-    "pages/unpaid/main"
+    "pages/unpaid/main",
+    "pages/evaluation/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,9 +1,10 @@
-$itemPadding: 0 13px 0 11px
+$itemPadding: 0 0 0 13px
 $selectedColor: #FB4D53
 $buttonBorder: 1px solid gray
 $buttonBorderSelect: 1px solid #FB4D53
 $itemspace: 0 11px 0 11px
 $itemlineheight: 10px
+$iconfont: "iconfont" !important
 
 page
   background-color: #f7f7f7
@@ -11,6 +12,7 @@ page
   .main_container
     .evaluation
       background: white
+      height: 283px
       .item_rate
         padding: 7px 13px 8px 13px
         background: white
@@ -27,6 +29,7 @@ page
           font-size: 13px
           line-height: 45px 
           margin-left: 15px
+          color: #101010
         .rate_container
           flex: 9
           display: flex
@@ -36,6 +39,7 @@ page
           margin-left: -7px
           .star
             color: #E3E3E3
+            padding: 0 4px 0 0
           .changeBGC
             color: #EFB336
       .evaluate_area
@@ -45,4 +49,115 @@ page
         textarea
           padding: 8px 13px 8px 13px
           width: 90%
+          place-content: #D5D5D5
+          height: 58px
+          font-size: 12px
+          margin-left: -4px
+        .input_listening
+          text-align: right
+          margin-right: 13px
+          color: #D5D5D5
+      .upload
+        font-size: 13px
+        color: #101010
+        padding: $itemPadding
+        .pick-title
+        .weui-uploader__bd
+          .weui-uploader__input-box
+            .weui-uploader__input
+              width: 66px
+              height: 66px
+              margin-top: 8px
+              background: #F4F4F4
+              display: flex
+              flex-direction: column
+              text-align: center
+              color: #999999
+              .camera
+                flex: 3
+                font-family: $iconfont
+                font-size: 30px 
+                line-height: 48px
+              .discribe
+                flex: 1
+                font-size: 11px
+                margin-top: -29px
+      .send_style
+        padding: $itemPadding
+        margin-top: 10px
+        .discribe
+          font-size: 13px
+          color: #101010
+          float: left
+          line-height: 18px
+          margin-left: 7px
+        .button
+          width: 16px
+          height: 16px
+          border-radius: 16px
+          border: solid 1px #979797
+          float: left
+        .selected
+          width: 16px
+          height: 16px
+          border-radius: 16px
+          border: solid 1px  $selectedColor
+          float: left
+          background: $selectedColor
+    .rate
+      height: 280px
+      background: white
+      .shop_service_comment
+        display: flex
+        background: white
+        margin-top: 13px
+        padding: 11px 0 11px 13px
+        .icon
+          flex: 1
+          font-family: $iconfont
+          font-size: 15px
+          color: #999999
+          margin-top: 3px
+        .discribe
+          flex: 13
+          line-height: 17px
+          font-size: 14px
+          color: #101010
+      .service_container
+        padding: 0 0 0 13px
+        background: white
+        .service_rate
+          border-top: solid 1px rgba(195, 195, 195, 0.35)
+          padding: 20px 0 34px 0
+          .service_container
+            display: flex
+            flex-direction: row
+            margin-left: -13px
+            margin-bottom: 13px
+            .discribe
+              flex: 2
+              font-size: 13px
+            .star_container
+              flex: 6
+              display: flex
+              flex-direction: row
+              font-size: 20px
+              line-height: 17px
+              margin-left: 14px
+              .star
+                color: #E3E3E3
+                padding: 0 7px 0 0
+              .changeBGC
+                color: #EFB336
+      .submit
+        margin: 0 auto
+        width: 95%
+        height: 44px
+        background: #F44B51
+        border-radius: 5px
+        font-size: 14px
+        color: white
+        line-height: 44px
+        text-align: center
+
 

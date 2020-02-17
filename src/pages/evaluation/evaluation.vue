@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      <div class="submit"> 提交 </div>
+      <div class="submit"> 提交</div>
     </div>
   </div>
 </template>

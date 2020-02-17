@@ -31,7 +31,7 @@
           共{{order.count}}件商品 实付金额：<span class="money">￥{{order.money}}</span>
         </div>
         <div class="order-operation">
-          <div class="button">去评价</div>
+          <div class="button" @click="SwitchToEvaluation">去评价</div>
           <div class="button">再次购买</div>
         </div>
       </div>
@@ -58,6 +58,9 @@
     methods: {
       checkCate (index) {
         this.checkedIndex = index
+      },
+      SwitchToEvaluation () {
+        wx.navigateTo({url: '../evaluation/main'})
       }
     }
   }

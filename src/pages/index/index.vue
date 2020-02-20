@@ -51,14 +51,31 @@
         </div>
         <!-- 测试页面入口 -->
         <div @click="test_enter" style="text-align:center">测试入口</div>
-        <div @click="test_enter2" style="text-align:center">测试入口2</div>
         <!-- 促销页面 -->
         <div class="saling">
-          营销活动区
+          <div class="title_contant">
+            <div class="title">西和限时抢购</div>
+            <div class="date_range">
+              <div class="inside">02.06-02.10</div>
+            </div>
+            <div class="more_info">更多活动钜惠 &#xe637;</div>
+          </div>
+          <div class="page_container">
+              图片
+          </div>
         </div>
         <!-- 招商页面 -->
         <div class="saling">
-          广告展示区
+          <div class="title_contant">
+            <div class="title">西和热点资讯</div>
+            <div class="date_range">
+              <div class="news">10</div>
+            </div>
+            <div class="more_info">更多热点资讯 &#xe637;</div>
+          </div>
+          <div class="page_container">
+              图片
+          </div>
         </div>
 
       </div>

@@ -100,5 +100,134 @@
         }
       ]
     }]
+  },
+
+  "evaluation": {
+    "overall": {
+      "typeId": 1,
+      "title": "商品评分",
+      "stars": [{
+        "id": 1,
+        "sequence": 0,
+        "chosen": false
+      }, {
+        "id": 2,
+        "sequence": 1,
+        "chosen": false
+      }, {
+        "id": 3,
+        "sequence": 2,
+        "chosen": false
+      }, {
+        "id": 4,
+        "sequence": 3,
+        "chosen": false
+      }, {
+        "id": 5,
+        "sequence": 4,
+        "chosen": false
+      }]
+    },
+    "type": [
+      {
+        "typeId": 1,
+        "title": "商品符合度",
+        "stars": [{
+          "id": 1,
+          "sequence": 0,
+          "chosen": false
+        }, {
+          "id": 2,
+          "sequence": 1,
+          "chosen": false
+        }, {
+          "id": 3,
+          "sequence": 2,
+          "chosen": false
+        }, {
+          "id": 4,
+          "sequence": 3,
+          "chosen": false
+        }, {
+          "id": 5,
+          "sequence": 4,
+          "chosen": false
+        }]
+      },
+      {
+        "typeId": 2,
+        "title": "店铺服务态度",
+        "stars": [{
+          "id": 1,
+          "sequence": 0,
+          "chosen": false
+        }, {
+          "id": 2,
+          "sequence": 1,
+          "chosen": false
+        }, {
+          "id": 3,
+          "sequence": 2,
+          "chosen": false
+        }, {
+          "id": 4,
+          "sequence": 3,
+          "chosen": false
+        }, {
+          "id": 5,
+          "sequence": 4,
+          "chosen": false
+        }]
+      },
+      {
+        "typeId": 3,
+        "title": "商家配送速度",
+        "stars": [{
+          "id": 1,
+          "sequence": 0,
+          "chosen": false
+        }, {
+          "id": 2,
+          "sequence": 1,
+          "chosen": false
+        }, {
+          "id": 3,
+          "sequence": 2,
+          "chosen": false
+        }, {
+          "id": 4,
+          "sequence": 3,
+          "chosen": false
+        }, {
+          "id": 5,
+          "sequence": 4,
+          "chosen": false
+        }]
+      },
+      {
+        "typeId": 4,
+        "title": "配送员服务",
+        "stars": [{
+          "id": 1,
+          "sequence": 0,
+          "chosen": false
+        }, {
+          "id": 2,
+          "sequence": 1,
+          "chosen": false
+        }, {
+          "id": 3,
+          "sequence": 2,
+          "chosen": false
+        }, {
+          "id": 4,
+          "sequence": 3,
+          "chosen": false
+        }, {
+          "id": 5,
+          "sequence": 4,
+          "chosen": false
+        }]
+      }]
   }
 }

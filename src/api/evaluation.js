@@ -8,6 +8,6 @@ export function getEvaluationType () {
 }
 
 export function getOverall () {
-  evaluation.overall.stars.forEach(star => { star.chosen = false })
+  evaluation.overall.stars.forEach(star => { star.chosen = true })
   return evaluation.overall
 }

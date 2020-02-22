@@ -102,6 +102,17 @@
     }]
   },
 
+  "addresses": [{
+    "id": 1,
+    "name": "沈嘉伟",
+    "phone": "181****8106",
+    "address": "甘肃省兰州市安宁区刘家堡乡兰机新区3号楼2单元202"
+  }, {
+    "id": 2,
+    "name": "周润泽",
+    "phone": "181****8106",
+    "address": "黑石山熔火之心大螺丝水池中三米深处"
+  }],
   "evaluation": {
     "overall": {
       "typeId": 1,
@@ -109,23 +120,23 @@
       "stars": [{
         "id": 1,
         "sequence": 0,
-        "chosen": false
+        "chosen": true
       }, {
         "id": 2,
         "sequence": 1,
-        "chosen": false
+        "chosen": true
       }, {
         "id": 3,
         "sequence": 2,
-        "chosen": false
+        "chosen": true
       }, {
         "id": 4,
         "sequence": 3,
-        "chosen": false
+        "chosen": true
       }, {
         "id": 5,
         "sequence": 4,
-        "chosen": false
+        "chosen": true
       }]
     },
     "type": [

@@ -61,7 +61,16 @@
             <div class="more_info">更多活动钜惠 &#xe637;</div>
           </div>
           <div class="page_container">
-              图片
+              <div class="promotion_page" v-for="singleItem in promotion" :key="singleItem.id">
+                <img class="item_img" :src=singleItem.img_route>
+                <div class="item_name">{{singleItem.item_name}}</div>
+                <div class="control_container">
+                  <div class="time_limit">限时</div>
+                  <div class="item_price">￥{{singleItem.price}}</div>
+                  <div class="original_price">￥{{singleItem.original_price}}</div>
+                  <div class="add_icon">&#xe615;</div>
+                </div>
+              </div>
           </div>
         </div>
         <!-- 招商页面 -->
@@ -104,7 +113,29 @@
             id: 3,
             outterImage: '../../static/swiper/a1.jpg'
           }],
-
+        promotion: [
+          {
+            id: 11,
+            item_name: '天水红富士1Kg非常好吃的苹果',
+            price: 32.8,
+            original_price: 43.2,
+            img_route: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583046796010&di=1fe9ad4672781c01a09e4c3cc394eecb&imgtype=0&src=http%3A%2F%2Fimg008.hc360.cn%2Fhb%2FMTQ2MDY3Mjc0NzUyOC02MTExNDM2NTA%3D.jpg'
+          },
+          {
+            id: 11,
+            item_name: '喀什日照瓜0.5kg精品西瓜子只卖西瓜子不卖西瓜谢谢大家',
+            price: 15.6,
+            original_price: 28.1,
+            img_route: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583051045127&di=fa617d8b5c7b9ee70875cd0f112aa494&imgtype=0&src=http%3A%2F%2Fimgqn.koudaitong.com%2Fupload_files%2F2015%2F07%2F19%2FFi2Vw6M_raMqDzduQQLCJlGzVO7Y.jpg%2521580x580.jpg'
+          },
+          {
+            id: 11,
+            item_name: 'iPhone11 128G 手机壳清水手机壳赠送钢化膜',
+            price: 9944,
+            original_price: 5566,
+            img_route: 'http://img3.imgtn.bdimg.com/it/u=2339639623,1005569462&fm=26&gp=0.jpg'
+          }
+        ],
         items: [
           {
             id: 1,

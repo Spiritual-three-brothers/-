@@ -87,12 +87,68 @@
         text-align: right
         line-height: 21px
     .page_container
-      background:  rgb(172, 172, 172)
       height: 158px
       margin-top: 10px
-      text-align: center
-      line-height: 158px
-      border-radius: 5px
+      display: flex
+      .promotion_page
+        flex: 1
+        display: flex
+        flex-direction: column
+        .item_img
+          width: 108px
+          height: 120px
+          border: soild 
+          border-radius: 5px
+          box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.07)
+        .item_name
+          font-size: 12px
+          display: -webkit-box
+          -webkit-box-orient: vertical
+          -webkit-line-clamp: 1
+          overflow: hidden
+          margin-top: 6px 
+          text-align: left
+          width: 100px
+        .control_container
+          display: flex
+          margin-top: 6px
+          .time_limit
+            width: 21px
+            height: 14px
+            line-height: 14px
+            border-radius: 5px
+            color:  rgba(255, 122, 64, 1)
+            font-size: 8px
+            text-align: center
+            font-family: Arial
+            border: 1px solid rgba(255, 122, 64, 1)
+            font-weight: bold
+            flex: 2
+          .item_price
+            color: rgba(244, 75, 81, 1)
+            font-size: 11px
+            text-align: left
+            font-family: SourceHanSansSC-bold
+            margin-left: 1px
+            font-weight: bold
+            flex: 3
+          .original_price
+            color: rgba(168, 168, 168, 1)
+            font-size: 9px
+            text-align: left
+            font-weight: 600
+            text-decoration: line-through
+            line-height: 18px
+            font-weight: bold
+            flex: 3
+          .add_icon
+            font-family: "iconfont" !important
+            color: rgba(255, 122, 64, 1)
+            font-size: 13px
+            line-height: 18px
+            flex: 2 
+            text-align: left
+            margin-top: -1px
 
 .userinfo
     position: fixed
@@ -142,6 +198,8 @@
       box-shadow: 0px 2px 6px 0px rgba(162, 154, 154, 0.4)
       border: 1px solid rgba(255, 255, 255, 0)
       border-radius: 50%
+      font-weight: bold
+      text-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 1)
       font-size: .8em
       color: white
     .item.green

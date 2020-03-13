@@ -15,7 +15,8 @@
     "pages/unpaid/main",
     "pages/evaluation/main",
     "pages/address_config/main",
-    "pages/address_modify/main"
+    "pages/address_modify/main",
+    "pages/shop_page/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

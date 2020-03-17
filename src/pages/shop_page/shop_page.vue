@@ -2,7 +2,7 @@
   <div class="this_container">
     <div class="shop_page">
       <div class="shop_title">
-        <div class="title_container">
+        <div  :class="adaptive">
           <img class="shop_img" src="https://pic1.zhimg.com/v2-8c13c9f55882ff2bd9f0a3f03d32e0ec_1200x500.jpg">
           <div class="shop_name">熹茶东百体验店ShiteaDB Store</div>
           </div>
@@ -76,7 +76,7 @@
                           </div>
                         </div>
                       </div>
-
+<div @click="touch()">点我</div>
                     </div>
                   </div>
                 </div>
@@ -130,6 +130,7 @@
         ],
         currentTab: 0,
         selectedSub: 0,
+        adaptive: '.title_container',
         content: [
           {
             mainCateId: 1,
@@ -147,6 +148,16 @@
     },
     mounted () {
     },
+    // 小程序的加载自适应，用于调节非全面屏手机打开页面时产生的样式问题
+    onLoad () {
+      console.log('执行了')
+      var data = wx.getMenuButtonBoundingClientRect()
+      if (data.top !== 50) {
+        this.adaptive = '.adaptiveCSS'
+      } else {
+        this.adaptive = '.title_container'
+      }
+    },
     methods: {
       clickTab (e) {
         this.currentTab = e
@@ -161,6 +172,21 @@
       navigate () {
         wx.navigateTo({url: '../detail/main'})
       }
+      // onLoad: fountion (options) {
+      //   var data = wx.getMenuButtonBoundingClientRect()
+      //   if (data.top !== 50) {
+      //     this.adaptive = 'adaptiveCSS'
+      //     console.log('非IPHONEX机型')
+      //   } else {
+      //     this.adaptive = '.title_container'
+      //   }
+      //   console.log('菜单按键宽度：', data.width)
+      //   console.log('菜单按键高度：', data.height)
+      //   console.log('菜单按键上边界坐标：', data.top)
+      //   console.log('菜单按键右边界坐标：', data.right)
+      //   console.log('菜单按键下边界坐标：', data.bottom)
+      //   console.log('菜单按键左边界坐标：', data.left)
+      // }
     }
   }
 </script>

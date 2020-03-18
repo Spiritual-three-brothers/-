@@ -2,6 +2,7 @@
   <div class="this_container">
     <div class="shop_page">
       <div class="shop_title">
+        <div class="backforward" :style="{'padding-top':buttonFromTop+'px'}">&#xe618;</div>
         <div  :class="adaptive">
           <img class="shop_img" src="https://pic1.zhimg.com/v2-8c13c9f55882ff2bd9f0a3f03d32e0ec_1200x500.jpg">
           <div class="shop_name">熹茶东百体验店ShiteaDB Store</div>
@@ -76,7 +77,6 @@
                           </div>
                         </div>
                       </div>
-<div @click="touch()">点我</div>
                     </div>
                   </div>
                 </div>
@@ -131,6 +131,7 @@
         currentTab: 0,
         selectedSub: 0,
         adaptive: '.title_container',
+        buttonFromTop: 50,
         content: [
           {
             mainCateId: 1,
@@ -153,6 +154,7 @@
       console.log('执行了')
       var data = wx.getMenuButtonBoundingClientRect()
       if (data.top !== 50) {
+        this.buttonFromTop = data.top
         this.adaptive = '.adaptiveCSS'
       } else {
         this.adaptive = '.title_container'

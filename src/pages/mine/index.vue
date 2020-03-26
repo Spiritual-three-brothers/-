@@ -2,6 +2,7 @@
   <div class="main_container">
     <!-- 顶部背景 -->
     <div class="topic_banner">
+      <image src='../../static/item/banner.png' style="width: 100%;height: 110px;display: inline-block;"></image>
       <!-- 用户信息 -->
       <div class="user_icon">
         <open-data type="userAvatarUrl"/>

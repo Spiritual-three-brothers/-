@@ -2,6 +2,7 @@
   <div class="this_container">
     <div class="shop_page">
       <div class="shop_title">
+        <div class="backBTN_container" :style="{'height':buttonFromBottom+'px'}"></div>
         <div class="backforward" :style="{'padding-top':buttonFromTop+'px'}">&#xe618;</div>
         <div  :class="adaptive">
           <img class="shop_img" src="https://pic1.zhimg.com/v2-8c13c9f55882ff2bd9f0a3f03d32e0ec_1200x500.jpg">
@@ -132,6 +133,7 @@
         selectedSub: 0,
         adaptive: '.title_container',
         buttonFromTop: 50,
+        buttonFromBottom: 100,
         content: [
           {
             mainCateId: 1,
@@ -153,10 +155,12 @@
     onLoad () {
       console.log('执行了')
       var data = wx.getMenuButtonBoundingClientRect()
-      if (data.top !== 50) {
+      if (data.top <= 40) {
         this.buttonFromTop = data.top
+        this.buttonFromBottom = data.top + data.height
         this.adaptive = '.adaptiveCSS'
       } else {
+        this.buttonFromBottom = data.top + data.height
         this.adaptive = '.title_container'
       }
     },

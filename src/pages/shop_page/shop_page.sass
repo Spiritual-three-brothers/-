@@ -16,12 +16,18 @@ page
       .shop_title
         width: 100%
         background: -webkit-linear-gradient(left, #d94b44, #ed7b61)
+        .backBTN_container
+          width: 100%
+          position: fixed
+          z-index: 1
+          background: -webkit-linear-gradient(left, #d94b44, #ed7b61)
         .backforward
           position: fixed
           font-family:"iconfont" !important
           margin-left: 10px
           font-size: 24px
           color: white
+          z-index: 3
         .shop_img
           width: 37px
           height: 37px
@@ -32,7 +38,7 @@ page
           line-height: 37px
           margin-left: 47px
       .shop_info
-        padding: 0 11px 10px 11px
+        padding: 0 13px 10px 13px
         display: flex
         font-size: 12px
         .month_sail
@@ -52,15 +58,16 @@ page
             line-height: 13px
             text-align: center
             margin-left: 6px
+            font-size: 10px
 
 .title_container
   // width: 100%
   height: 44px
-  padding: 90px 11px 0 11px
+  padding: 80px 13px 0 13px
 
 .adaptiveCSS
   height: 44px
-  padding: 66px 11px 0 11px
+  padding: 60px 13px 0 13px
 
 .item-list
     background-color: rgb(247, 247, 247)

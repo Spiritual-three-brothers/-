@@ -1,5 +1,6 @@
 <template>
   <div class="this_container">
+    <scroll-view class='scroll-view-vertical' :scroll-y="true"  @scroll="scroll">
     <div class="shop_page">
       <div class="shop_title">
         <div class="backBTN_container" :style="{'height':buttonFromBottom+'px'}"></div>
@@ -26,25 +27,25 @@
           <div class="all_selection">
             
                 <div class="top">
-                  <scroll-view  scroll-x class="tab-bar-container">
+                  <scroll-view  scroll-x class="tab-bar-container" :class="top > buttonFromBottom ? 'audio-fixed' : '' ">
                     <div class="tabbar" :class="{'tabbar-bottom':currentTab===index}" v-for="(item,index) in tabBar" :key="index"
                         @click="clickTab(index)">
                       {{item.title}}
                     </div>
                   </scroll-view>
 
-                  <scroll-view class='scroll-view-vertical' :scroll-y="true"  @scroll="scroll">
-                    <div :class="top > 100 ? 'audio-fixed' : '' ">120120120 </div>
-                  </scroll-view> 
+                
+                    <!-- <div :class="top > 120 ? 'audio-fixed' : '' ">120120120 </div> -->
+
                   
                   <div class="swiper-container">
-                    <scroll-view scroll-x class="sub-category">
+                    <scroll-view scroll-x class="sub-category" :class="top > buttonFromBottom ? 'audio-fixed-son' : '' ">
                       <span @click="clickSub(_index)" :class="{'selected': selectedSub === _index}" class="sub-category-item"
                             v-for="(sub,_index) in tabBar[currentTab].subcategory" :key="sub.id">{{sub.title}}</span>
                     </scroll-view>
                     <div class="item-list">
 
-                      <div class="item-content" @click="navigate">
+                      <div class="item-content" @click="navigate" :class="top > buttonFromBottom ? 'item-content-justify' : ''">
                         <div class="item-container">
                           <div class="image-container">
                             <img src="../../../static/item/osm.jpg">
@@ -156,6 +157,7 @@
           </div>
       </div>
     </div>
+    </scroll-view>
   </div>
 </template>
 

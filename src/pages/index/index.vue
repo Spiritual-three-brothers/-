@@ -12,12 +12,6 @@
     <!-- 主页容器 -->
     <div class="main_container">
       <div class="top_background">
-        <!-- <div class="icon_background"> -->
-          <!-- &#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;
-          &#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;
-          &#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;
-          &#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;&#xe616;&#xe617;&#xe614;
-        </div> -->
         <div class="swiper-container">
           <swiper
             :indicator-dots='true'
@@ -58,6 +52,7 @@
         <!-- 测试页面入口 -->
         <div @click="test_enter" style="text-align:center">测试入口</div>
         <div @click="test_enter2" style="text-align:center">测试入口</div>
+        <div @click="test_enter3" style="text-align:center">测试入口</div>
         <!-- 促销页面 -->
         <div class="saling">
           <div class="title_contant">
@@ -226,6 +221,9 @@
       },
       test_enter2 () {
         wx.navigateTo({url: '../shop_page/main'})
+      },
+      test_enter3 () {
+        wx.navigateTo({url: '../shop_detail/main'})
       }
     },
 

@@ -33,6 +33,10 @@
                     </div>
                   </scroll-view>
 
+                  <scroll-view class='scroll-view-vertical' :scroll-y="true"  @scroll="scroll">
+                    <div :class="top > 100 ? 'audio-fixed' : '' ">120120120 </div>
+                  </scroll-view> 
+                  
                   <div class="swiper-container">
                     <scroll-view scroll-x class="sub-category">
                       <span @click="clickSub(_index)" :class="{'selected': selectedSub === _index}" class="sub-category-item"
@@ -77,7 +81,61 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                        <div class="item-container">
+                          <div class="image-container">
+                            <img src="../../../static/item/osm.jpg">
+                          </div>
+                          <div class="item_info_container">
+                            <div class="item-title">
+                              欧诗漫OSM美白化妆品套装 营养美肤晶彩无暇补水保湿护肤品
+                            </div>
+                            <div class="priceAndSell">
+                              <div class="item-price">
+                                <span style="font-size: 12px">￥</span>25.53
+                              </div>
+                              <div class="item-comment">
+                                13万条评价
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-container">
+                          <div class="image-container">
+                            <img src="../../../static/item/osm.jpg">
+                          </div>
+                          <div class="item_info_container">
+                            <div class="item-title">
+                              欧诗漫OSM美白化妆品套装 营养美肤晶彩无暇补水保湿护肤品
+                            </div>
+                            <div class="priceAndSell">
+                              <div class="item-price">
+                                <span style="font-size: 12px">￥</span>25.53
+                              </div>
+                              <div class="item-comment">
+                                13万条评价
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-container">
+                          <div class="image-container">
+                            <img src="../../../static/item/osm.jpg">
+                          </div>
+                          <div class="item_info_container">
+                            <div class="item-title">
+                              欧诗漫OSM美白化妆品套装 营养美肤晶彩无暇补水保湿护肤品
+                            </div>
+                            <div class="priceAndSell">
+                              <div class="item-price">
+                                <span style="font-size: 12px">￥</span>25.53
+                              </div>
+                              <div class="item-comment">
+                                13万条评价
+                              </div>
+                            </div>
+                          </div>
+                        </div>                        
+                      </div> 
                     </div>
                   </div>
                 </div>
@@ -134,6 +192,7 @@
         adaptive: '.title_container',
         buttonFromTop: 50,
         buttonFromBottom: 100,
+        top: 0,
         content: [
           {
             mainCateId: 1,
@@ -177,6 +236,10 @@
       },
       navigate () {
         wx.navigateTo({url: '../detail/main'})
+      },
+      scroll (e) {
+        console.log(e)
+        this.top = e.mp.detail.scrollTop
       }
       // onLoad: fountion (options) {
       //   var data = wx.getMenuButtonBoundingClientRect()

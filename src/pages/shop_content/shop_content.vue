@@ -55,5 +55,5 @@
 
 
 <style lang="sass">
-  @import "shop_detail"
+  @import "shop_content"
 </style>

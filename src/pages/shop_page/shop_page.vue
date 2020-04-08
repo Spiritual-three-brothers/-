@@ -27,19 +27,15 @@
           <div class="all_selection">
             
                 <div class="top">
-                  <scroll-view  scroll-x class="tab-bar-container" :class="top > buttonFromBottom ? 'audio-fixed' : '' ">
+                  <scroll-view  scroll-x class="tab-bar-container" :class="top > buttonFromBottom ? 'audio-fixed' : ''  ">
                     <div class="tabbar" :class="{'tabbar-bottom':currentTab===index}" v-for="(item,index) in tabBar" :key="index"
                         @click="clickTab(index)">
                       {{item.title}}
                     </div>
                   </scroll-view>
-
-                
-                    <!-- <div :class="top > 120 ? 'audio-fixed' : '' ">120120120 </div> -->
-
-                  
+  
                   <div class="swiper-container">
-                    <scroll-view scroll-x class="sub-category" :class="top > buttonFromBottom ? 'audio-fixed-son' : '' ">
+                    <scroll-view scroll-x class="sub-category" :class="top > buttonFromBottom ? 'audio-fixed-son' : '' " >
                       <span @click="clickSub(_index)" :class="{'selected': selectedSub === _index}" class="sub-category-item"
                             v-for="(sub,_index) in tabBar[currentTab].subcategory" :key="sub.id">{{sub.title}}</span>
                     </scroll-view>
@@ -195,6 +191,8 @@
         buttonFromTop: 50,
         buttonFromBottom: 100,
         top: 0,
+        adjustMenuFromTop: 0,
+        adjustMenuFromTopSon: 0,
         content: [
           {
             mainCateId: 1,
@@ -210,13 +208,21 @@
         ]
       }
     },
-    mounted () {
-    },
     // 小程序的加载自适应，用于调节非全面屏手机打开页面时产生的样式问题
     onLoad () {
       console.log('执行了')
       var data = wx.getMenuButtonBoundingClientRect()
+      // this.adjustMenuFromTop = data.top
+      // this.adjustMenuFromTopSon = this.adjustMenuFromTop + 45
+      if (data.top === 0) {
+        this.adjustMenuFromTop = data.top
+        console.log('????????')
+      } else {
+        this.adjustMenuFromTop = ''
+        console.log(this.adjustMenuFromTop)
+      }
       if (data.top <= 40) {
+        // 用于调整菜单栏
         this.buttonFromTop = data.top
         this.buttonFromBottom = data.top + data.height
         this.adaptive = '.adaptiveCSS'
@@ -224,6 +230,15 @@
         this.buttonFromBottom = data.top + data.height
         this.adaptive = '.title_container'
       }
+    },
+    mounted () {
+      window.addEventListener('scroll', this.scrollHandle)
+      // 绑定页面的滚动事件
+    },
+    scrollHandle: function (e) {
+      console.log('dao')
+      var srctop = e.srcElement.scrollingElement.scrollTop
+      console.log(srctop)
     },
     methods: {
       clickTab (e) {

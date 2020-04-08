@@ -17,7 +17,8 @@
     "pages/address_config/main",
     "pages/address_modify/main",
     "pages/shop_page/main",
-    "pages/shop_detail/main"
+    "pages/shop_detail/main",
+    "pages/shop_content/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
